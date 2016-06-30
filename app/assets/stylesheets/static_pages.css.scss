@@ -1,0 +1,16 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Main site structure */
+
+/* Header */
+.header {
+    height: 120px;
+    width: auto;
+    border-style: ridge;
+}
+
+#navlist {
+    float: right;
+    margin-top: 70px;
+}
