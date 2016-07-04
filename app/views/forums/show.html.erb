@@ -1,4 +1,9 @@
 <% provide(:title, "Post") %>
+
+<% if flash[:success] %>
+    <div class="alert-success"><%= flash[:success] %></div>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @forum.title %>

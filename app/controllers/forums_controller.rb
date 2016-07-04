@@ -8,13 +8,19 @@ class ForumsController < ApplicationController
   end
   
   def new
+    @forum = Forum.new
   end
  
   def create
   @forum = Forum.new(forum_params)
  
-  @forum.save
-  redirect_to @forum
+    if @forum.save
+      redirect_to @forum
+      flash[:success] = "Thanks for the Post!"
+    else
+      render new_forum_path
+      flash[:alert] = "Please provide input!"
+    end
   end
   
   private

@@ -1,5 +1,9 @@
 <% provide(:title, "Forum Posts") %>
 
+<% if flash[:success] %>
+    <div class="alert-success"><%= flash[:success] %></div>
+<% end %>
+
 <h1 id="listing">Listing Posts</h1>
  
 <table>
