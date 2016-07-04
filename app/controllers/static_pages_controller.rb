@@ -8,9 +8,12 @@ class StaticPagesController < ApplicationController
   def news
   end
   
-  def activities
+  def advertise
   end
   
   def about
+  end
+  
+  def contact
   end
 end

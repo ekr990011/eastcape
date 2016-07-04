@@ -1,0 +1,19 @@
+<% provide(:title, "Forum Posts") %>
+
+<h1 id="listing">Listing Posts</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th><%= link_to "New Post", new_forum_path %></th>
+  </tr>
+ 
+  <% @forums.each do |forum| %>
+    <tr>
+      <td><%= forum.title %></td>
+      <td><%= forum.post %></td>
+      <td><%= link_to 'Show', forum_path(forum) %></td>
+    </tr>
+  <% end %>
+</table>

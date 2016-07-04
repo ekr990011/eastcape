@@ -1,0 +1,17 @@
+<% provide(:title, "Forum") %>
+
+<%= form_for :Forum, url: forums_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :post %><br>
+    <%= f.text_area :post %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
