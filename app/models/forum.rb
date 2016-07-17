@@ -1,4 +1,6 @@
 class Forum < ActiveRecord::Base
+  has_many :comments
+  
   validates :title, presence: true,
                     length: { minimum: 1, maximum: 50 }
   validates :post,  presence: true,

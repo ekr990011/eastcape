@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'news' =>       'static_pages#news'
   get 'advertise' =>  'static_pages#advertise'
   
-  resources :forums
-  
+  resources :forums do
+    resources :comments
+  end
 end
