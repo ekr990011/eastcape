@@ -5,7 +5,13 @@ Rails.application.routes.draw do
   get 'news' =>       'static_pages#news'
   get 'advertise' =>  'static_pages#advertise'
   
+  get 'signup' =>     'users#new'
+  resources :users
+  
   resources :forums do
     resources :comments
   end
+  
+  delete 'logout' =>     'sessions#destroy'
+  resources :sessions, only: [:new, :create] 
 end
