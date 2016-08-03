@@ -16,19 +16,24 @@ ActiveRecord::Schema.define(version: 20160730172849) do
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
     t.text     "reply"
+    t.integer  "user_id"
     t.integer  "forum_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "comments", ["forum_id"], name: "index_comments_on_forum_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "forums", force: :cascade do |t|
     t.string   "title"
     t.text     "post"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "forums", ["user_id"], name: "index_forums_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

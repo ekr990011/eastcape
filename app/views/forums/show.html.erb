@@ -1,10 +1,18 @@
+
 <% provide(:title, "Post") %>
 
 <% if flash[:success] %>
     <div class="alert-success"><%= flash[:success] %></div>
 <% end %>
 
-posted by: <%= User.find(@forum.user_id).username %>
+posted by:
+
+<% if @forum.user_id.nil? %>
+Anonymous
+<% else %>
+<%= User.find(@forum.user_id).username %>
+<% end %>
+<br />
 
 <p>
   <strong>Title:</strong>
