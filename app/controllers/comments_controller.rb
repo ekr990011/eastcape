@@ -2,7 +2,15 @@ class CommentsController < ApplicationController
   def create
     @forum = Forum.find(params[:forum_id])
     @comment = @forum.comments.create(comment_params)
-    redirect_to forum_path(@forum)
+    @comment.user_id = current_user.id
+    
+    if @comment.save
+      redirect_to @forum
+      flash[:success] = "Thanks for the Post!"
+    else
+      redirect_to forum_path(@forum)
+      flash[:alert] = "Please provide input!"
+    end
   end
  
   private

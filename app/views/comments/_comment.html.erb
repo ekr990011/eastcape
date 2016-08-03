@@ -7,3 +7,9 @@
     <strong>Comment:</strong>
     <%= comment.reply %>
   </p>
+  posted by:
+<% if comment.user_id.nil? %>
+Anonymous
+<% else %>
+<%= User.find(comment.user_id).username %>
+<% end %>
