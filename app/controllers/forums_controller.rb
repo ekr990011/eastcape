@@ -17,7 +17,9 @@ class ForumsController < ApplicationController
   end
  
   def create
+  #@forum = Forum.new(forum_params)
   @forum = Forum.new(forum_params)
+  @forum.user_id = current_user.id
  
     if @forum.save
       redirect_to @forum

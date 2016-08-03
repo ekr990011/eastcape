@@ -4,6 +4,8 @@
     <div class="alert-success"><%= flash[:success] %></div>
 <% end %>
 
+posted by: <%= User.find(@forum.user_id).username %>
+
 <p>
   <strong>Title:</strong>
   <%= @forum.title %>
