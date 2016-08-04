@@ -5,24 +5,17 @@
     <div class="alert-success"><%= flash[:success] %></div>
 <% end %>
 
+<div>
 posted by:
-
 <% if @forum.user_id.nil? %>
 Anonymous
 <% else %>
 <%= User.find(@forum.user_id).username %>
 <% end %>
 <br />
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @forum.title %>
-</p>
- 
-<p>
-  <strong>Post:</strong>
-  <%= @forum.post %>
-</p>
+<%= render 'forums/forum_post' %>
 
 <h2>Comments:</h2>
 <%= render @forum.comments %>
@@ -30,16 +23,4 @@ Anonymous
 
 <h2>Add a comment:</h2>
 
-<%= form_for([@forum, @forum.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :reply %><br>
-    <%= f.text_area :reply %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'comments/comment_form' %>

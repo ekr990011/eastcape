@@ -17,7 +17,6 @@ class ForumsController < ApplicationController
   end
  
   def create
-  #@forum = Forum.new(forum_params)
   @forum = Forum.new(forum_params)
   unless current_user.nil?
    @forum.user_id = current_user.id
