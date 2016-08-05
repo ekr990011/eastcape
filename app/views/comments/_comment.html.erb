@@ -13,10 +13,14 @@ Anonymous
 <% else %>
 <%= User.find(comment.user_id).username %>
 <% end %>
-
+comment:
+<%= comment.id %>
+<br>
+forum:
+<%= @forum.id %>
+<br>
 <div>
   <li><%= link_to 'Edit', edit_forum_comment_path(forum_id: @forum, comment_id: @comment) %></li>
-  <li><%= link_to 'Delete', forum_comment_path(forum_id: @forum, comment_id: @comment),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></li>
+  <li><%= link_to 'Delete', forum_comment_path( @forum.id, comment.id),
+                method: :delete %></li>
 </div>

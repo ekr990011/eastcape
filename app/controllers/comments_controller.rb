@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
+  before_action :find_forum
+  before_action :find_comment, only: [:edit, :update, :destroy]
+  
+  
   def create
-    @forum = Forum.find(params[:forum_id])
     @comment = @forum.comments.create(comment_params)
     @comment.user_id = current_user.id
     
@@ -30,16 +33,22 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    #@forum = Forum.find(params[:id])
-    Comment.find_by(params[:id]).destroy
-    #@comment.destroy
+    @comment.destroy
     flash[:success] = "Successfully Deleted!"
-    redirect_to forum_path
+    redirect_to forum_path(@forum)
   end
   
   
   private
     def comment_params
       params.require(:comment).permit(:commenter, :reply)
+    end
+    
+    def find_forum
+      @forum = Forum.find(params[:forum_id])
+    end
+    
+    def find_comment
+      @comment = @forum.comments.find(params[:id])
     end
 end
