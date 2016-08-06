@@ -4,25 +4,26 @@ class CommentsController < ApplicationController
   
   
   def create
-    @comment = @forum.comments.create(comment_params)
-    @comment.user_id = current_user.id
+    @comment = @forum.comments.new(comment_params)
+    unless current_user.nil?
+      @comment.user_id = current_user.id
+    else
+    end 
+    
     
     if @comment.save
-      redirect_to @forum
+      redirect_to forum_path(@forum)
       flash[:success] = "Thanks for the Post!"
     else
-      redirect_to forum_path(@forum)
+      redirect_to '/'#forum_path(@forum)
       flash[:alert] = "Please provide input!"
     end
   end
   
   def edit
-    @comment = Comment.find(params[:id])
   end
   
   def update
-  @comment = Comment.find(params[:id])
- 
     if @comment.update(comment_params)
       redirect_to @forum
       flash[:success] = "Thanks for the Update!"

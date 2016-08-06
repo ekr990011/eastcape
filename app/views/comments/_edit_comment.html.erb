@@ -1,5 +1,4 @@
-
-<%= form_for([@forum, @forum.comments.build], url: edit_forum_comment_path(@comment), html: {method: "patch"}) do |f| %>
+<%= form_for([@forum, @comment]) do |f| %>
   <p>
     <%= f.label :commenter %><br>
     <%= f.text_field :commenter %>
