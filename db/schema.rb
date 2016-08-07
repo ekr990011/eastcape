@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(version: 20160730172849) do
 
   create_table "comments", force: :cascade do |t|
-    t.string   "commenter"
     t.text     "reply"
     t.integer  "user_id"
     t.integer  "forum_id"

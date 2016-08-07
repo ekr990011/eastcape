@@ -1,9 +1,4 @@
   <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
     <strong>Comment:</strong>
     <%= comment.reply %>
   </p>
@@ -25,6 +20,8 @@ forum:
             <%# render @forum.comments %>
           </ul>
         </li>-->
-  <li><%= link_to 'Edit', edit_forum_comment_path(comment.forum, comment) %></li>
-  <li><%= link_to 'Delete', [comment.forum, comment], method: :delete %></li>
+  <% if ((current_user != nil) && (current_user == comment.user))  || (current_user && current_user.admin?) %>
+    <li><%= link_to 'Edit', edit_forum_comment_path(comment.forum, comment) %></li>
+    <li><%= link_to 'Delete', [comment.forum, comment], method: :delete %></li>
+  <% end %>
 </div>
