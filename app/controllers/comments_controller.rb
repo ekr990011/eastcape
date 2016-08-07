@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :find_forum
-  before_action :find_comment, only: [:edit, :update, :destroy]
-  
+  before_action :find_comment, only: [:edit, :update, :destroy, :comment_owner]
+  before_action :comment_owner, only: [:destroy, :edit, :update]
   
   def create
     @comment = @forum.comments.new(comment_params)
@@ -43,6 +43,13 @@ class CommentsController < ApplicationController
   private
   
   
+    def comment_owner
+      unless ((current_user != nil) && (current_user == @comment.user))  || (current_user && current_user.admin?)
+        flash[:danger] = "How dare you use your guile tactics on us!"
+        redirect_to @forum
+      end
+    end
+    
     def comment_params
       params.require(:comment).permit(:commenter, :reply)
     end

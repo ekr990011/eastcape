@@ -2,7 +2,10 @@
 <% provide(:title, "Post") %>
 
 <% if flash[:success] %>
-    <div class="alert-success"><%= flash[:success] %></div>
+    <div class="alert alert-success"><%= flash[:success] %></div>
+    <% elsif flash[:danger] %>
+    <div class="alert alert-danger"><%= flash[:danger] %></div>
+    <% else %>
 <% end %>
 
 <div>
@@ -18,7 +21,7 @@ Anonymous
 <%= render 'forums/forum_post' %>
 <br>
 <h2>Comments:</h2>
-
+<%= pluralize(@comment.count, "Reply") %>
 <%= render @forum.comments %>
 <br>
 
