@@ -1,4 +1,5 @@
 class ForumsController < ApplicationController
+  before_action :forum_owner, only: [:edit, :update, :destroy]
   
   def index
     @forums = Forum.all
@@ -56,6 +57,14 @@ class ForumsController < ApplicationController
   
   def forum_params
     params.require(:forum).permit(:title, :post)
+  end
+  
+  def forum_owner
+    @forum = Forum.find(params[:id])
+    unless ((current_user != nil) && (current_user == @forum.user))  || (current_user && current_user.admin?)
+      flash[:danger] = "How dare you use your guile tactics on us!"
+      redirect_to @forum
+    end
   end
   
 end

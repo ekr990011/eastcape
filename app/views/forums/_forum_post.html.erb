@@ -7,3 +7,12 @@
   <strong>Post:</strong>
   <%= @forum.post %>
 </p>
+            
+            <% if ((current_user != nil) && (current_user == @forum.user))  || (current_user && current_user.admin?) %>
+              <%= link_to 'Edit', edit_forum_path(@forum.id) %>
+              |
+              <%= link_to 'Delete', @forum,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          

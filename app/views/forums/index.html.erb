@@ -17,17 +17,6 @@
     <tr>
       <td><%= link_to forum.title, forum_path(forum) %></td>
       <td><%= link_to forum.post, forum_path(forum) %></td>
-      <td class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" %><em>Actions</em><b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <% if current_user && current_user.admin? %>
-            <li><%= link_to 'Edit', edit_forum_path(forum) %></li>
-            <li><%= link_to 'Delete', forum_path(forum),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-            </li>
-            <% end %>
-          </ul>
-      </td>
     </tr>
   <% end %>
 </table>
