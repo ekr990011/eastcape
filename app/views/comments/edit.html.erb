@@ -1,3 +1,17 @@
+<% @comments.each do |comments| %>
+  <% if comments.forum_id == @comment.forum_id %>
+    <strong>Comment:</strong>
+      <%= comments.reply %>
+    <p>posted by:
+      <% if comments.user_id.nil? %>
+        Anonymous
+      <% else %>
+        <%= User.find(comments.user_id).username %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
+<div class="boxforcommentforum">
 <%= form_for([@forum, @comment]) do |f| %>
   <p>
     <%= f.label :reply %><br>
@@ -7,3 +21,4 @@
     <%= f.submit %>
   </p>
 <% end %>
+</div>

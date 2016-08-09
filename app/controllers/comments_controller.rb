@@ -21,6 +21,7 @@ class CommentsController < ApplicationController
   end
   
   def edit
+    @comments = Comment.all
   end
   
   def update

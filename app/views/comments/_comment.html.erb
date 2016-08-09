@@ -8,15 +8,10 @@ Anonymous
 <% else %>
 <%= User.find(comment.user_id).username %>
 <% end %>
-comment:
-<%= comment.id %>
-<br>
-forum:
-<%= @forum.id %>
 <br>
 <div>
   <% if ((current_user != nil) && (current_user == comment.user))  || (current_user && current_user.admin?) %>
       <%= link_to 'Edit', edit_forum_comment_path(comment.forum, comment) %>
-    <li><%= link_to 'Delete', [comment.forum, comment], method: :delete %></li>
+      <%= link_to 'Delete', [comment.forum, comment], method: :delete %>
   <% end %>
 </div>

@@ -1,5 +1,8 @@
 <footer class="header">
    <% # nav bar/ login#out/ advertise?/ about? , here %>
+   <% if current_user %>
+   <li class="nav nav-tabs" id="navlistleft"><h4><b>User:</b><%= " " + current_user.username %></h4></li>
+   <% end %>
    <ul class="nav nav-tabs" id="navlist">
      <li><%= link_to "Home", root_path %></li>
      <li><%= link_to "Advertise", advertise_path %></li>
