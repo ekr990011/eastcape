@@ -1,8 +1,9 @@
 <footer class="header">
    <% # nav bar/ login#out/ advertise?/ about? , here %>
    <% if current_user %>
-   <li class="nav nav-tabs" id="navlistleft"><h4><b>User:</b><%= " " + current_user.username %></h4></li>
+   <li class="nav nav-tabs" id="navlistleft"><h4><%= "User : " + current_user.username %></h4></li>
    <% end %>
+  <div class="headernav"> 
    <ul class="nav nav-tabs" id="navlist">
      <li><%= link_to "Home", root_path %></li>
      <li><%= link_to "Advertise", advertise_path %></li>
@@ -16,5 +17,6 @@
                                          data: { confirm: "Are you sure?" } %>
      </li>
      <% end %>
-   </ul>   
+   </ul>
+  </div>
 </footer>

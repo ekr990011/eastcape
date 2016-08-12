@@ -1,24 +1,26 @@
+<div class="center-block boxforcommentforum">
 <% @comments.each do |comments| %>
   <% if comments.forum_id == @comment.forum_id %>
     <strong>Comment:</strong>
       <%= comments.reply %>
     <p>posted by:
       <% if comments.user_id.nil? %>
-        Anonymous
+        Visitor
       <% else %>
         <%= User.find(comments.user_id).username %>
       <% end %>
     </p>
   <% end %>
 <% end %>
-<div class="boxforcommentforum">
+</div>
+<div class="form-group">
 <%= form_for([@forum, @comment]) do |f| %>
   <p>
-    <%= f.label :reply %><br>
-    <%= f.text_area :reply %>
+    <div class="smallbox"><%= f.label :reply, class: "center-block replytext" %></div>
+    <%= f.text_area :reply, class: "form-control replyarea center-block", rows: 5, id: "comment" %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Edit Comment", class: "btn btn-info btn-lg center-block" %>
   </p>
 <% end %>
 </div>

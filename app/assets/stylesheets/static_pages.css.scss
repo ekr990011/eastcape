@@ -2,23 +2,27 @@
 @import "bootstrap";
 
 /* Main site structure */
-
+html, body, .container-fluid {
+    height: 100%;
+}
 /* Header */
 .header {
-    height: 120px;
+    height: 10%;
     width: auto;
     border-style: ridge;
+    position: relative;
 }
 
-#navlist {
+.headernav {
+    /*position: absolute;
+    top: 40%;    
+    left: 69%;*/
     float: right;
-    margin-top: 70px;
+    
 }
 
 #navlistleft {
     float: left;
-    margin-top: 70px;
-    margin-left: 70px;
 }
 
 /* Forums */
@@ -36,12 +40,80 @@ td {
     border-style: ridge;
 }
 
-.boxforcommentforum {
-    margin: clear, auto;
-    margin-left: 40%;
-    height: 20%;
-    width: 20%;
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Flash */
+.boxforcommentforum {
+    width: 40%;
+    border-style: solid;
+    border-color: #33ccff;
+    /*position: static;*/
+}
+
+.replyarea {
+    width: 30%;
+    border-style: solid;
+}
+
+.replytext {
+    height: 10%;
+    text-align: center;
+}
+
+.smallbox {
+    height: 10%;
+    display: block;
+}
+
+.commentrow {
+    position:relative;
+    height: 40%;
+    border-style: solid;
+    border-color: #4d79ff;
+    margin-bottom: 1%;
+}
+
+.commentuser {
+    position:absolute;
+    height: 82%;
+    width: 20%;
+    top: 8%;
+    border-style: solid;
+    border-color: #33ccff;
+}
+
+.commentsonforum {
+    position: absolute;
+    height: 82%;
+    width: 77%;
+    left: 22%;
+    bottom: 10%;
+    border-style: solid;
+    border-color: #ffb3ec;
+}
+
+.vertical-center {
+    position: absolute;
+    top: 39%;
+    bottom: 50%;
+    width: 100%;
+    border-style: solid;
+    border-color: black;
+}
+/* Homepage */
+
+.container-homepage {
+    border-style: solid;
+    border-color: black;
+}
+
+.forum-homepage {
+    width: 45%;
+    height: 30%;
+    border-style: solid;
+    border-color: blue;
+}
 

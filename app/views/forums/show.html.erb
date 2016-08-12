@@ -21,11 +21,11 @@ Anonymous
 <%= render 'forums/forum_post' %>
 
 <br>
-<h2>Comments:</h2>
+<h4>Comments:</h4>
 <%= pluralize(@comment.count, "Reply") %>
 <%= render @forum.comments %>
 <br>
 
-<h2>Add a comment:</h2>
+<h3>Add a comment:</h3>
 
 <%= render 'comments/comment_form' %>

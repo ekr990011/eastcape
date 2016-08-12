@@ -1,17 +1,24 @@
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.reply %>
-  </p>
-  posted by:
-<% if comment.user_id.nil? %>
-Anonymous
-<% else %>
-<%= User.find(comment.user_id).username %>
-<% end %>
+<div class="container center-block row commentrow">
+<p>
+  <strong>
+    <div class="commentuser text-center">
+      <div class="vertical-center col-md-2">
+    posted by:
+      <% if comment.user_id.nil? %>
+        Visitor
+        <br>
+      <% else %>
+        <%= User.find(comment.user_id).username %>
+      <% end %>
+    <br>
+      <% if ((current_user != nil) && (current_user == comment.user))  || (current_user && current_user.admin?) %>
+        <%= link_to 'Edit', edit_forum_comment_path(comment.forum, comment) %>
+        <%= link_to 'Delete', [comment.forum, comment], method: :delete, data: {confirm: "Are you sure?"} %>
+      <% end %>
+      </div>
+    </div>
+  </strong>
+    <div class="commentsonforum col-md-10"><%= comment.reply %></div>
 <br>
-<div>
-  <% if ((current_user != nil) && (current_user == comment.user))  || (current_user && current_user.admin?) %>
-      <%= link_to 'Edit', edit_forum_comment_path(comment.forum, comment) %>
-      <%= link_to 'Delete', [comment.forum, comment], method: :delete %>
-  <% end %>
+</p>
 </div>
