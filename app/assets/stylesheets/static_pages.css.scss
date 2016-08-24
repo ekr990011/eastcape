@@ -56,11 +56,9 @@ td {
 .replyarea {
     width: 30%;
     border-style: solid;
-}
-
-.replytext {
-    height: 10%;
-    text-align: center;
+    border-width: 0.5em;
+    border-color: #ffeead;
+    /*background-color: #96ceb4;*/
 }
 
 .smallbox {
@@ -100,9 +98,15 @@ td {
     top: 39%;
     bottom: 50%;
     width: 100%;
-    border-style: solid;
-    border-color: black;
 }
+
+.commentfix {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    z-index: 1;
+}
+
 /* Homepage */
 
 .container-homepage {

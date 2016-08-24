@@ -1,9 +1,10 @@
 <%= form_for([@forum, @forum.comments.build]) do |f| %>
   <p>
-    <%= f.label :reply %><br>
-    <%= f.text_area :reply %>
+    <%= f.text_area :reply, class: "form-control replyarea center-block", rows: 5, id: "comment" %>
   </p>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Comment", class: "btn btn-info btn-lg center-block" %>
   </p>
 <% end %>
+<div class="center-block commentfixform">
+</div>
