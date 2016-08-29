@@ -25,10 +25,19 @@ namespace :noko do
         p.date  = @date.text
         p.save
       end
-    #@a = Mechanize.new
-    #@a.user_agent_alias = 'Mac Safari 4'
-    #@page = @a.get('http://www.rancholeonero.com/fishing_boat/fiishing_fish_report.html')
-    #@title = @page.search('//p[(((count(preceding-sibling::*) + 1) = 1) and parent::*)]//strong')
+   
+   
+    @a = Mechanize.new
+    @a.user_agent_alias = 'Mac Safari 4'
+    @page = @a.get('http://www.rancholeonero.com/fishing_boat/fiishing_fish_report.html')
+    @title = @page.search('p font')
+    @y = @title.text.strip
+    @p = @y.split("\n")
+    @date = @page.search('.blue_black_bg font font bold').text
+    Rancho.create do |x|
+      x.title = @p.third
+      x.date = @date
+    end
     
 
     @a = Mechanize.new
@@ -55,6 +64,34 @@ namespace :noko do
     end
   
   
+  @a = Mechanize.new
+  @page = @a.get('https://www.wunderground.com/blog/Geary/gearys-sea-of-cortez-weather')
+  @title = @page.search('#show-entry:nth-child(1) .article a')
+  
+  @title.each do |x|
+    @urlugly = x['href']
+    @link = "https://www.wunderground.com/" + @urlugly
+  end
+  Wunderground.create do |x|
+    x.title = @title.text
+    x.url = @link
+  end
+  
+  
+  @a = Mechanize.new
+@page = @a.get('http://www.petethomasoutdoors.com')
+@title = @page.search('#entry-6a0120a77b966b970b01b7c884ea86970b .entry-header a')
+@date = @page.search('#alpha-inner > .date-header:nth-child(3)')
+
+  @title.each do |x|
+    @url = x['href']
+  end  
+Pete.create do |x|
+ x.title = @title.text
+ x.date = @date.text
+ x.url = @url
+ end
+
 end
 end
 

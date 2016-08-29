@@ -68,3 +68,4 @@ class ForumsController < ApplicationController
   end
   
 end
+  
