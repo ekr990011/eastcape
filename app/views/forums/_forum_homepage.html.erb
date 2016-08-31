@@ -1,3 +1,5 @@
-<div class="forum-homepage center-block">
-
-</div>
+  <% @forum_homepage.each do |x| %>
+    <b>User :<%= x.user_id %></b><br>
+    <%= link_to "#{x.title}", forum_path(x) %><br>
+    <%= link_to "#{x.post}", forum_path(x) %><br>
+  <% end %>

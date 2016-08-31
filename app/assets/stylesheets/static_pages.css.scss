@@ -2,27 +2,33 @@
 @import "bootstrap";
 
 /* Main site structure */
-html, body, .container-fluid {
+html, body {
     height: 100%;
 }
 /* Header */
 .header {
-    height: 10%;
-    width: auto;
+    height: 15%;
     border-style: ridge;
-    position: relative;
+    background-image:url('water.jpg')
 }
 
 .headernav {
-    /*position: absolute;
-    top: 40%;    
-    left: 69%;*/
     float: right;
-    
 }
 
-#navlistleft {
-    float: left;
+.headtabspadding {
+    height: 61%;
+}
+
+.nav > li > a {
+    font-size: 125%;
+      color: #ff6600; 
+      text-shadow: .06em .06em #660000;
+}
+
+.nav > li > a:hover {
+    background-color: #ffeecc;
+    color: red;
 }
 
 /* Forums */
@@ -38,12 +44,6 @@ table {
 
 td {
     border-style: ridge;
-}
-
-.center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .boxforcommentforum {
@@ -109,14 +109,32 @@ td {
 
 /* Homepage */
 
-.container-homepage {
+.forum-homepage {
+    height: 30%;
     border-style: solid;
-    border-color: black;
+    border-color: blue;
 }
 
-.forum-homepage {
-    width: 45%;
+.news-homepage {
     height: 30%;
+    border-style: solid;
+    border-color: green;
+}
+
+.static-pic {
+    height: 45%;
+    border-style: solid;
+    border-color: red;
+}
+
+.ads-homepage {
+    height: 75%;
+    border-style: solid;
+    border-color: yellow;
+}
+
+.bottom {
+    height: 25%;
     border-style: solid;
     border-color: blue;
 }

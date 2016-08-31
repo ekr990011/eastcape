@@ -1,6 +1,10 @@
 class ForumsController < ApplicationController
   before_action :forum_owner, only: [:edit, :update, :destroy]
   
+  def _forum_homepage
+    @forum_homepage = Forum.limit(3)
+  end
+  
   def index
     @forums = Forum.all
   end
