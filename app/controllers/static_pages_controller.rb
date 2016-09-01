@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @forum_homepage = Forum.last(5)
+    @forum_homepage = Forum.limit(3)
   end
   
   def forum
@@ -17,7 +17,7 @@ class StaticPagesController < ApplicationController
     @title_rancho = Rancho.last.title
     @date_rancho = Rancho.last.date
     
-    @title_google = Google.where(created_at: Date.today..1.day.from_now).limit(5)
+    @title_google = Google.where(created_at: Time.now..2.days.ago )
     
     @title_pete = Pete.last.title
     @date_pete = Pete.last.date

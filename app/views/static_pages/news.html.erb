@@ -14,9 +14,11 @@
 <br>
 <h5>Google News</h5>
 <% @title_google.each do |x| %>
-<%= link_to "#{x.title}", x.url %>
-
+<%# if x.created_at >= 40.minutes.ago %>
+<%= link_to "#{x.title}", x.url %><br>
+<%= x.id %><br>
 <br>
+<%# end %>
 <% end %>
 <br>
 <h5>Pete</h5>

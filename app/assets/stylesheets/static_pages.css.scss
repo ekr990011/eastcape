@@ -9,7 +9,7 @@ html, body {
 .header {
     height: 15%;
     border-style: ridge;
-    background-image: url('water.jpg');
+    background-image:url('water.jpg');
 }
 
 .headernav {
@@ -110,13 +110,13 @@ td {
 /* Homepage */
 
 .forum-homepage {
-    height: 30%;
+    height: 35%;
     border-style: solid;
     border-color: blue;
 }
 
 .news-homepage {
-    height: 30%;
+    height: 35%;
     border-style: solid;
     border-color: green;
 }
@@ -128,14 +128,28 @@ td {
 }
 
 .ads-homepage {
-    height: 75%;
+    height: 80%;
     border-style: solid;
     border-color: yellow;
 }
 
 .bottom {
-    height: 25%;
+    height: 20%;
     border-style: solid;
     border-color: blue;
+}
+
+.forum_posts {
+    border-style: ridge;
+    border-color: pink;
+    height: 26%;
+    color: #ff704d;
+    font-size: 125%;
+    text-shadow: .06em .06em #991f00;
+}
+
+.forum_posts:hover {
+    background-color: #b3e6ff;
+    border-radius: 1em;
 }
 
