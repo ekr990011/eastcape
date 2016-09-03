@@ -1,4 +1,4 @@
-<footer class="header col-md-12">
+<footer class="header col-xs-12 col-sm-12 col-md-12">
    <% # nav bar/ login#out/ advertise?/ about? , here %>
    <% if current_user %>
    <li class="nav nav-tabs" id="navlistleft"><h4><%= "User : " + current_user.username %></h4></li>
@@ -16,7 +16,10 @@
      <li><%= link_to "Log out", logout_path, method: :delete,
                                          data: { confirm: "Are you sure?" } %>
      </li>
+     <div class="col-xs-12 div-tp"></div>
      <% end %>
    </ul>
+   <div class="col-xs-12 div-tp"></div>
   </div>
+    <%= image_tag(('water3.jpg'), class: "header_image") %>
 </footer>

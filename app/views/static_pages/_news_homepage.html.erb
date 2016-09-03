@@ -1,0 +1,19 @@
+<%= link_to(@news_homepage.url) do %>
+<div class="col-xs-12 col-sm-12 col-md-12 news_homepage">
+<%= @news_homepage.title %>
+</div>
+<% end %>
+
+<%= link_to(@news_vm.url) do %>
+<div class="col-xs-12 col-sm-12 col-md-12 news_homepage">
+  <%= @news_vm.title %>
+</div>
+<% end %>
+
+<%= link_to(@rancho.url) do %>
+  <div class="col-xs-12 col-sm-12 col-md-12 news_homepage">
+    <%= "#{@rancho.date} " %>
+    <%= @rancho.title %>
+  </div>
+<% end %>
+

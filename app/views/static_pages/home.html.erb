@@ -1,19 +1,35 @@
-    <div class="col-md-2 ads-homepage col-md-push-10">
+    <div class="col-xs-2 col-sm-2 col-md-2 ads-homepage col-xs-push-10 col-sm-push-10 col-md-push-10">
         add-right
     </div>
     
-    <div class="col-md-10 static-pic col-md-pull-2">
-        asdfasd
+    <div class="col-xs-10 col-sm-10 col-md-10 static-pic col-xs-pull-2 col-sm-pull-2 col-md-pull-2">
+        <div class="col-md-6 video">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/R8YwmHoyzvQ"></iframe>
+            </div>
+        </div>
+        <%= image_tag(('LB.Flag1.jpg'), class: "col-md-6 img-rounded img-responsive img_home") %>
+            <p class="static_text">
+                <b>
+                    East Cape-World class Fishing and World class Wind!<br> 
+                    This adventure playground is nestled against the pristine views of<br>
+                    the Sea of Cortez.<br> 
+                    You know that beer commercial of people sitting under a palapa on a deserted beach?<br> 
+                    Come find your muse while burying your toes in warm sand and surf!<br>
+                    That's East Cape!
+                </b>
+            </p>
     </div>
 
-    <div class="forum-homepage col-md-5 col-md-pull-2">
+    <div class="col-xs-5 col-sm-5 col-md-5  forum-homepage col-xs-pull-2 col-sm-pull-2 col-md-pull-2">
         <h4><b>Newest Posts</b></h4>
         <%= render 'forums/forum_homepage' %>
     </div>
-    <div class="col-md-5 news-homepage col-md-pull-2">
-    
+    <div class="col-xs-5 col-sm-5 col-md-5 news-homepage col-xs-pull-2 col-sm-pull-2 col-md-pull-2">
+        <h4><b>News!</b></h4>
+        <%= render 'static_pages/news_homepage' %>
     </div> 
-    <div class="col-md-12 bottom">
+    <div class="col-xs-12 col-sm-12 col-md-12 bottom">
         lkjal;sdkfj
     </div>
     

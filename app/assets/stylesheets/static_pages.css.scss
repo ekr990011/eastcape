@@ -1,34 +1,62 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+
 /* Main site structure */
-html, body {
+html, body, .container-fluid {
     height: 100%;
 }
+
+.container-fluid {
+    padding: 0px;
+}
+
+
 /* Header */
 .header {
     height: 15%;
-    border-style: ridge;
-    background-image:url('water.jpg');
+    z-index: 0;
+}
+
+.header_image {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
 }
 
 .headernav {
+    position: absolute;
     float: right;
-}
-
-.headtabspadding {
-    height: 61%;
+    bottom: 0%;
+    right: 0%;
 }
 
 .nav > li > a {
     font-size: 125%;
       color: #ff6600; 
       text-shadow: .06em .06em #660000;
+      z-index: 2;
 }
 
 .nav > li > a:hover {
     background-color: #ffeecc;
     color: red;
+    z-index: 2;
+    border-radius: 3em;
+}
+
+.div-tp {
+    position: absolute;
+    background-color: #e6e6e6;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 1;
+    border-radius: 3em;
+    bottom: 0%;
+    right: 0%;
 }
 
 /* Forums */
@@ -110,46 +138,87 @@ td {
 /* Homepage */
 
 .forum-homepage {
-    height: 35%;
-    border-style: solid;
-    border-color: blue;
+    height: 40%;
+    border-bottom: ridge;
+    border-right: ridge;
 }
 
 .news-homepage {
-    height: 35%;
-    border-style: solid;
-    border-color: green;
+    height: 40%;
+    border-bottom: ridge;
 }
 
 .static-pic {
     height: 45%;
-    border-style: solid;
-    border-color: red;
+    border-bottom: ridge;
+    overflow: hidden;
+}
+
+.static_text {
+    position: absolute;
+    left: 52%;
+    top: 5%;
+    color: #d9b3ff;
+    font-size: 1em;
+    text-shadow: .03em .03em #5900b3;
+}
+
+.img_home {
+    top: 4%;
+    height: 88.5%;
+    z-index: -1;
 }
 
 .ads-homepage {
-    height: 80%;
-    border-style: solid;
-    border-color: yellow;
+    height: 85%;
+    border-left: ridge;
 }
 
 .bottom {
-    height: 20%;
-    border-style: solid;
-    border-color: blue;
+    height: 22.5%;
 }
 
 .forum_posts {
-    border-style: ridge;
+    margin-top: 1%;
+    border-bottom: ridge;
     border-color: pink;
     height: 26%;
     color: #ff704d;
-    font-size: 125%;
+    font-size: 140%;
     text-shadow: .06em .06em #991f00;
+    overflow: hidden;
 }
 
 .forum_posts:hover {
     background-color: #b3e6ff;
     border-radius: 1em;
+}
+
+.forum-title {
+    text-align: center;
+    font-size: 125%;
+}
+
+.news_homepage {
+    margin-top: 1%;
+    padding-top: 3%;
+    border-bottom: ridge;
+    border-color: #80ffff;
+    height: 26%;
+    color: #4b70ff;
+    font-size: 125%;
+    text-shadow: .06em .06em #001f99;
+    overflow: hidden;
+}
+
+.news_homepage:hover {
+    background-color: #ccffcc;
+    border-radius: 1em;
+}
+
+.video {
+    position: relative;
+    right: 1.5%;
+    top: 4%;
 }
 

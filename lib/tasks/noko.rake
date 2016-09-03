@@ -37,6 +37,7 @@ namespace :noko do
     Rancho.create do |x|
       x.title = @p.third
       x.date = @date
+      x.url = 'http://www.rancholeonero.com/fishing_boat/fiishing_fish_report.html'
     end
     
 
