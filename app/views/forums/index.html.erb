@@ -3,21 +3,34 @@
 <% if flash[:success] %>
     <div class="alert-success"><%= flash[:success] %></div>
 <% end %>
-
-<h1 id="listing">East Cape Billboard</h1>
-<div class ="table-responsive">
-<table class="table table-hover">
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th><%= link_to "New Post", new_forum_path %></th>
-  </tr>
- 
-  <% @forums.each do |forum| %>
-    <tr>
-      <td><%= link_to forum.title, forum_path(forum) %></td>
-      <td><%= link_to forum.post, forum_path(forum) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="col-md-12">
+  <h2>East Cape's Pirate Cove</h2>
 </div>
+
+<%= link_to new_forum_path do %>
+  <div class="col-md-3" id="new-post"><h4>Create New Post</h4></div>
+<% end %>
+
+  <% @forums.each do |forum| %>
+  <div class="forum-index col-md-6 center-box">
+    <%= link_to forum_path(forum) do %>
+      <div class="posts-title col-md-8 center-box">
+        <b><%= forum.title %></b><br>
+        <span class="date-index"><%= forum.created_at %>
+        posted by:
+        <% if forum.user_id.nil? %>
+        Anonymous
+        <% else %>
+        <%= User.find(forum.user_id).username %>
+        <% end %>
+        </span>
+      </div>
+    <% end %>
+      <%= link_to forum_path(forum) do %>
+        <div class="body-post col-md-12">
+          <%= forum.post %>
+        </div>
+      <% end %>
+  </div>
+  <% end %>
+  

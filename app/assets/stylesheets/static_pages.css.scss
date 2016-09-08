@@ -61,18 +61,45 @@ html, body, .container-fluid {
 
 /* Forums */
 
-table {
-    margin-left: 50px;
-    border-collapse: collapse;
+/* Index */
+
+.forum-index {
+    height: 27%;
+    overflow: hidden;
+    margin-bottom: 1%;
 }
 
-#listing {
-    margin-left: 25px;
+.posts-title {
+    font-size: 166%;
+    color: #0000cc;
 }
 
-td {
+.posts-title:hover {
+    color: #b3b3ff;
+}
+
+.date-index {
+    font-size: 60%;
+}
+
+.body-post {
+    word-wrap: break-word;
+    max-height: 60%;
+    font-size: 150%;
+    overflow: hidden;
+    color: #e65c00;
+}
+
+.body-post:hover {
+    color: #ffd1b3;
+}
+
+#new-post {
     border-style: ridge;
 }
+
+/* Individual Forum & comments */
+
 
 .boxforcommentforum {
     width: 40%;
@@ -152,23 +179,27 @@ td {
     height: 45%;
     border-bottom: ridge;
     overflow: hidden;
-}
+}    
 
 .static_text {
     position: absolute;
-    left: 52%;
-    top: 5%;
+    left: 4%;
+    top: 0%;
     color: #d9b3ff;
     font-size: 1em;
     text-shadow: .03em .03em #5900b3;
+    padding-right: 3%;
 }
 
 .img_home {
     top: 4%;
-    height: 88.5%;
-    z-index: -1;
+    height: 96%;
 }
 
+.home_img {
+    height: 92%;
+    width: 99%;
+}
 .ads-homepage {
     height: 85%;
     border-left: ridge;
@@ -222,3 +253,23 @@ td {
     top: 4%;
 }
 
+/* Login form */
+
+.white-space {
+    height: 100%;
+}
+
+.login {
+    height: 30%;
+    font-size: 180%;
+    background-color: #ffc299;
+    border-radius: 1em;
+}
+
+.little-space {
+    margin-top: 2%;
+}
+
+.little-space-top {
+    margin-top: 15%;
+}
