@@ -1,6 +1,6 @@
-
 <% provide(:title, "Post") %>
-
+<div class="col-md-8 showpost">
+    
 <% if flash[:success] %>
     <div class="alert alert-success"><%= flash[:success] %></div>
     <% elsif flash[:danger] %>
@@ -8,25 +8,24 @@
     <% else %>
 <% end %>
 
-<div>
-posted by:
-<% if @forum.user_id.nil? %>
-Anonymous
-<% else %>
-<%= User.find(@forum.user_id).username %>
-<% end %>
-<br />
+<div class="col-md-12">
+<%= render 'forums/forum_post' %>
 </div>
 
-<%= render 'forums/forum_post' %>
-
-<br>
+<div class="col-md-12 comment-area">
+    <br>
 <h4>Comments:</h4>
-<%= pluralize(@comment.count, "Reply") %>
-<%= render @forum.comments %>
-<br>
+<%= pluralize(@comment.count, "Reply") %><br>
 
-<h3>Add a comment:</h3>
-<div class="commentfix">
+
+<%= render @forum.comments.reverse %>
+
+</div>
+
+<div class="col-md-10 comment-form-area">
+    <h3>Add a comment:</h3>
     <%= render 'comments/comment_form' %>
+</div>
+
+</div>
 </div>

@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
     @date_rancho = Rancho.last.date
     @url_rancho = Rancho.last.url
     
-    @title_google = Google.where(created_at: Time.now..2.days.ago )
+    @title_google = Google.where("created_at >= ?", 1.day.ago).limit(8)
     
     @title_pete = Pete.last.title
     @date_pete = Pete.last.date

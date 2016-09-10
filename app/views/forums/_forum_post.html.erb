@@ -1,10 +1,20 @@
-<p>
-  <strong>Title:</strong>
-  <%= @forum.title %>
-</p>
+<div class="col-md-12 forum-title-post">
+<div class="forum-show-title">
+  <%= @forum.title %><br>
+</div>
+
+<div>
+    posted by:
+    <% if @forum.user_id.nil? %>
+      Visitor
+    <% else %>
+      <%= User.find(@forum.user_id).username %>
+    <% end %>
+  <br />
+</div>
+</div>
  
-<p>
-  <strong>Post:</strong>
+<div class="forum-postby col-md-12">
   <%= @forum.post %>
 </p>
             

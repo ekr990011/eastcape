@@ -100,66 +100,40 @@ html, body, .container-fluid {
 
 /* Individual Forum & comments */
 
-
-.boxforcommentforum {
-    width: 40%;
-    border-style: solid;
-    border-color: #33ccff;
-    /*position: static;*/
+.comment-area {
+    padding-left: 5%;
 }
 
-.replyarea {
-    width: 30%;
-    border-style: solid;
-    border-width: 0.5em;
-    border-color: #ffeead;
-    /*background-color: #96ceb4;*/
+.forum-postby {
+    font-size: 150%;
+    margin-top: 1%;
 }
 
-.smallbox {
-    height: 10%;
-    display: block;
+.forum-show-title {
+    font-size: 170%; 
+    margin-top: 3%;
 }
 
-.commentrow {
-    position:relative;
-    height: 40%;
-    border-style: solid;
-    border-color: #4d79ff;
+.forum-title-post {
     margin-bottom: 1%;
 }
 
-.commentuser {
-    position:absolute;
-    height: 82%;
-    width: 20%;
-    top: 8%;
-    border-style: solid;
-    border-color: #33ccff;
+.comment-form-area {
+    margin-left: 5%;
 }
 
-.commentsonforum {
-    position: absolute;
-    height: 82%;
-    width: 77%;
-    left: 22%;
-    bottom: 10%;
-    border-style: solid;
-    border-color: #ffb3ec;
+.comment-reply {
+    font-size: 140%;
+    margin-top: 3%;
 }
 
-.vertical-center {
-    position: absolute;
-    top: 39%;
-    bottom: 50%;
-    width: 100%;
+.postby {
+    font-size: 85%;
 }
 
-.commentfix {
-    position: fixed;
-    bottom: 0%;
-    width: 100%;
-    z-index: 1;
+.showpost {
+    border-style: ridge;
+    word-wrap: break-word;
 }
 
 /* Homepage */
@@ -251,6 +225,12 @@ html, body, .container-fluid {
     position: relative;
     right: 1.5%;
     top: 4%;
+}
+
+/* News */
+
+.static-news {
+    font-size: 150%;
 }
 
 /* Login form */
