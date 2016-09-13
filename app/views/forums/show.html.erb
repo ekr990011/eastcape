@@ -1,31 +1,29 @@
 <% provide(:title, "Post") %>
+
 <div class="col-md-8 showpost">
     
-<% if flash[:success] %>
-    <div class="alert alert-success"><%= flash[:success] %></div>
-    <% elsif flash[:danger] %>
-    <div class="alert alert-danger"><%= flash[:danger] %></div>
-    <% else %>
-<% end %>
+    <% if flash[:success] %>
+        <div class="alert alert-success"><%= flash[:success] %></div>
+        <% elsif flash[:danger] %>
+        <div class="alert alert-danger"><%= flash[:danger] %></div>
+        <% else %>
+    <% end %>
 
-<div class="col-md-12">
-<%= render 'forums/forum_post' %>
-</div>
+    <div class="col-md-12">
+        <%= render 'forums/forum_post' %>
+    </div>
 
-<div class="col-md-12 comment-area">
-    <br>
-<h4>Comments:</h4>
-<%= pluralize(@comment.count, "Reply") %><br>
+    <div class="col-md-12 comment-area">
+        <br>
+        <h4>Comments:</h4>
+        <%= pluralize(@comment.count, "Reply") %><br>
+        <%= render @forum.comments.reverse %>
 
+    </div>
 
-<%= render @forum.comments.reverse %>
+    <div class="col-md-10 comment-form-area">
+        <h3>Add a comment:</h3>
+        <%= render 'comments/comment_form' %>
+    </div>
 
-</div>
-
-<div class="col-md-10 comment-form-area">
-    <h3>Add a comment:</h3>
-    <%= render 'comments/comment_form' %>
-</div>
-
-</div>
 </div>

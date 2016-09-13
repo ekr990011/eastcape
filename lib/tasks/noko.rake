@@ -6,25 +6,24 @@ namespace :noko do
     @page = @a.get('http://www.hotelbuenavista.com/n/fish-report')
     @title = @page.search('p+ .blog-item a')
     @date = @page.search('p+ .blog-item i')
-  
-      News.create do |p|
-          p.title = @title.text
-          p.url   = @title.attribute('href').text
-          p.date  = @date.text
-          p.save
-      end
+    News.create do |p|
+        p.title = @title.text
+        p.url   = @title.attribute('href').text
+        p.date  = @date.text
+        p.save
+    end
       
     @a = Mechanize.new
     @page = @a.get('https://vanwormerresorts.com/fishing-report')
     @title = @page.search('li:nth-child(1) .desc')
     @date = @page.search('li:nth-child(1) span')
     @url = @page.search('li:nth-child(1) .read_more')
-      Vm.create do |p|
-        p.title = @title.text
-        p.url   = @url.attribute('href').text
-        p.date  = @date.text
-        p.save
-      end
+    Vm.create do |p|
+      p.title = @title.text
+      p.url   = @url.attribute('href').text
+      p.date  = @date.text
+      p.save
+    end
    
    
     @a = Mechanize.new
@@ -54,7 +53,6 @@ namespace :noko do
                     "2", "3", "4", "5", "6", "7", "8", "9", "10", "Next", "Advanced search",
                     "RSS", "Search Help", "Send feedback", "Business Solutions", "Privacy", "Terms", "About Google", 
                     "Google Home", "Advertising Programs"]
-  
     @search.each do |x|
       if @google_list.exclude?(x.text)
         Google.create do |y|
@@ -68,7 +66,6 @@ namespace :noko do
   @a = Mechanize.new
   @page = @a.get('https://www.wunderground.com/blog/Geary/gearys-sea-of-cortez-weather')
   @title = @page.search('#show-entry:nth-child(1) .article a')
-  
   @title.each do |x|
     @urlugly = x['href']
     @link = "https://www.wunderground.com/" + @urlugly
@@ -80,20 +77,19 @@ namespace :noko do
   
   
   @a = Mechanize.new
-@page = @a.get('http://www.petethomasoutdoors.com')
-@title = @page.search('#entry-6a0120a77b966b970b01b7c884ea86970b .entry-header a')
-@date = @page.search('#alpha-inner > .date-header:nth-child(3)')
-
+  @page = @a.get('http://www.petethomasoutdoors.com')
+  @title = @page.search('#entry-6a0120a77b966b970b01b7c884ea86970b .entry-header a')
+  @date = @page.search('#alpha-inner > .date-header:nth-child(3)')
   @title.each do |x|
     @url = x['href']
   end  
-Pete.create do |x|
- x.title = @title.text
- x.date = @date.text
- x.url = @url
- end
+  Pete.create do |x|
+   x.title = @title.text
+   x.date = @date.text
+   x.url = @url
+   end
 
-end
+  end
 end
 
     

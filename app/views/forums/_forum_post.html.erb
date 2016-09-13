@@ -1,28 +1,27 @@
 <div class="col-md-12 forum-title-post">
-<div class="forum-show-title">
-  <%= @forum.title %><br>
-</div>
+  <div class="forum-show-title">
+    <%= @forum.title %><br>
+  </div>
 
-<div>
+  <div>
     posted by:
     <% if @forum.user_id.nil? %>
       Visitor
     <% else %>
       <%= User.find(@forum.user_id).username %>
     <% end %>
-  <br />
-</div>
+    <br />
+  </div>
 </div>
  
 <div class="forum-postby col-md-12">
   <%= @forum.post %>
-</p>
-            
-            <% if ((current_user != nil) && (current_user == @forum.user))  || (current_user && current_user.admin?) %>
-              <%= link_to 'Edit', edit_forum_path(@forum.id) %>
-              |
-              <%= link_to 'Delete', @forum,
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          
+
+  <% if ((current_user != nil) && (current_user == @forum.user))  || (current_user && current_user.admin?) %>
+    <%= link_to 'Edit', edit_forum_path(@forum.id) %>
+    |
+    <%= link_to 'Delete', @forum,
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>          

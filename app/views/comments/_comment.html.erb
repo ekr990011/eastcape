@@ -9,7 +9,7 @@
         <%= User.find(comment.user_id).username %>
       <% end %>
       <% if ((current_user != nil) && (current_user == comment.user))  || (current_user && current_user.admin?) %>
-      <br>
+        <br>
         <%= link_to 'Edit', edit_forum_comment_path(comment.forum, comment) %>
         <%= link_to 'Delete', [comment.forum, comment], method: :delete, data: {confirm: "Are you sure?"} %>
       <% end %>
