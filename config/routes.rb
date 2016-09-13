@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'contact' =>    'static_pages#contact'
   get 'news' =>       'static_pages#news'
   get 'advertise' =>  'static_pages#advertise'
+  get 'fishing' =>    'static_pages#fishing'
   
   get 'signup' =>     'users#new'
   resources :users

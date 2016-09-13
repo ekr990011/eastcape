@@ -41,4 +41,7 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
+  
+  def fishing
+  end
 end

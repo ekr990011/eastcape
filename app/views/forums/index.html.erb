@@ -11,6 +11,8 @@
   <div class="col-md-3" id="new-post"><h4>Create New Post</h4></div>
 <% end %>
 
+<%= will_paginate %>
+
   <% @forums.each do |forum| %>
   <div class="forum-index col-md-6 center-box">
     <%= link_to forum_path(forum) do %>
@@ -33,4 +35,6 @@
       <% end %>
   </div>
   <% end %>
-  
+  <div class="col-md-12">
+  <%= will_paginate %>
+  </div>

@@ -12,6 +12,10 @@ html, body, .container-fluid {
     padding: 0px;
 }
 
+.above-all {
+    z-index: 10;
+}
+
 
 /* Header */
 .header {
@@ -225,6 +229,21 @@ html, body, .container-fluid {
     position: relative;
     right: 1.5%;
     top: 4%;
+}
+
+/* Fishing */
+
+.static-fishing {
+    height: 50%;
+    border-style: ridge;
+    font-size: 150%;
+}
+
+.static-fishing-ad {
+}
+
+.fishing-directory {
+    
 }
 
 /* News */
