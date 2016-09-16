@@ -150,22 +150,27 @@ html, body, .container-fluid {
     word-wrap: break-word;
 }
 
+
 /* Homepage */
+
+.weather-widget {
+    
+}
 
 .forum-homepage {
     height: 40%;
-    border-bottom: ridge;
-    border-right: ridge;
+    // border-bottom: ridge;
+    // border-right: ridge;
 }
 
 .news-homepage {
     height: 40%;
-    border-bottom: ridge;
+    // border-bottom: ridge;
 }
 
 .static-pic {
     height: 45%;
-    border-bottom: ridge;
+    // border-bottom: ridge;
     overflow: hidden;
 }    
 
@@ -190,7 +195,6 @@ html, body, .container-fluid {
 }
 .ads-homepage {
     height: 85%;
-    border-left: ridge;
 }
 
 .bottom {
