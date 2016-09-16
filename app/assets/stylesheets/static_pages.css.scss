@@ -17,10 +17,10 @@ html, body, .container-fluid {
 }
 
 
-/* Header */
+/* Header/Footer */
 .header {
     height: 15%;
-    z-index: 0;
+    z-index: 1;
 }
 
 .header_image {
@@ -36,6 +36,16 @@ html, body, .container-fluid {
     float: right;
     bottom: 0%;
     right: 0%;
+}
+
+.user-tab {
+    position: absolute;
+    float: left;
+    bottom: 0%;
+    left: 0%;
+    z-index: 3;
+    color: #ff6600;
+    text-shadow: .06em .06em #660000;
 }
 
 .nav > li > a {
