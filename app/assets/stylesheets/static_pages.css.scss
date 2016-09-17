@@ -154,7 +154,10 @@ html, body, .container-fluid {
 /* Homepage */
 
 .weather-widget {
-    
+    z-index: 5;
+    font-size: 150%;
+    color: #fff0b3;
+    text-shadow: .06em .06em #997a00;
 }
 
 .forum-homepage {

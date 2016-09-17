@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   helper_method :current_user
+  helper_method :weather
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -18,4 +19,9 @@ class ApplicationController < ActionController::Base
   def require_user
     redirect_to '/' unless current_user
   end
+  
+  def weather
+    @weather = Weather.last
+  end
+  
 end

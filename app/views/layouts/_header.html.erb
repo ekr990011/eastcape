@@ -1,8 +1,18 @@
 <header class="col-xs-12 col-sm-12 col-md-12 header">
   
+  <div class="weather-widget col-xs-3">
+    
+    <%= image_tag("#{weather.wicon}-s.png") %>
+    <%= weather.tempf.to_i %>&deg;F<br>
+    <%= weather.wtext.titlecase %>
+    
+    
+    </div>
+    
+    
+    
   <div class="headernav">
     <% # img / nav bar/ weather icon, here %>
-    
     <nav>
       <ul class="nav nav-tabs" id="navlist">
         <li><%= link_to "Home", root_path %></li>
