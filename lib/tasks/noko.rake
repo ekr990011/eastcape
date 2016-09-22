@@ -57,7 +57,7 @@ namespace :noko do
       if @google_list.exclude?(x.text)
         Google.create do |y|
           y.title = x.text
-          y.url = x.uri.to_s.slice(7..-1)
+          y.url = x.uri.to_s.slice(7..-1).split("&sa")[0]
         end
       end
     end

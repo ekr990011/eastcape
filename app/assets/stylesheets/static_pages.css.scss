@@ -18,6 +18,32 @@ html, body, .container-fluid {
 
 
 /* Header/Footer */
+
+.tagline {
+    font-family: "Comic Sans Ms", cursive, sans-serif;
+    color: #ff8080;
+    text-shadow: .04em .04em #990000;
+    font-size: 120%;
+}
+
+.headert {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 300%;
+    color: #ffb380;
+    text-shadow: .04em .04em #cc5200;
+}
+
+.weather-widget a {
+    color: #fff0b3;
+    text-shadow: .06em .06em #997a00;
+}
+
+.weather-widget {
+    z-index: 5;
+    font-size: 150%;
+}
+
+
 .header {
     height: 15%;
     z-index: 1;
@@ -153,12 +179,6 @@ html, body, .container-fluid {
 
 /* Homepage */
 
-.weather-widget {
-    z-index: 5;
-    font-size: 150%;
-    color: #fff0b3;
-    text-shadow: .06em .06em #997a00;
-}
 
 .forum-homepage {
     height: 40%;
@@ -182,7 +202,7 @@ html, body, .container-fluid {
     left: 4%;
     top: 0%;
     color: #d9b3ff;
-    font-size: 1em;
+    font-size: 1.3em;
     text-shadow: .03em .03em #5900b3;
     padding-right: 3%;
 }

@@ -1,14 +1,15 @@
 <header class="col-xs-12 col-sm-12 col-md-12 header">
   
-  <div class="weather-widget col-xs-3">
+  <div class="weather-widget col-xs-2">
+  <%= link_to "http://www.accuweather.com/en/mx/los-barriles/236828/weather-forecast/236828#menu-country", :target => "_blank" do %>
     
     <%= image_tag("#{weather.wicon}-s.png") %>
     <%= weather.tempf.to_i %>&deg;F<br>
     <%= weather.wtext.titlecase %>
     
     
+    <% end %>
     </div>
-    
     
     
   <div class="headernav">
@@ -29,5 +30,9 @@
     </nav>
     <div class="col-xs-12 div-tp"></div>
   </div>
-  <%= image_tag(('water4.jpg'), class: "header_image") %>
+  <%= image_tag(('water3.jpg'), class: "header_image") %>
+  <div class="col-xs-6 col-xs-offset-2">
+  <h1  class="col-xs-12 headert">East Cape Baja</h1>
+  <p class="col-xs-6 col-xs-offset-5 tagline">Pirates' Cove</p>
+  </div>
 </header>

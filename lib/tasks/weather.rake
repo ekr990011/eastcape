@@ -13,20 +13,25 @@ namespace :weather do
       
       temp2 = temphash.fetch("Metric")
       tempc = temp2.fetch("Value")
-
+      
       wicon = jsonhash.fetch("WeatherIcon")
-  
+      
       wtext = jsonhash.fetch("WeatherText")
       
-      Weather.create do |x|
-        x.tempf = tempf
-        x.tempc = tempc
-        x.wicon = wicon
-        x.wtext = wtext
+      if Weather.last.nil?
+        Weather.create do |x|
+          x.tempf = tempf
+          x.tempc = tempc
+          x.wicon = wicon
+          x.wtext = wtext
+        end
+      else
+        @weatherl = Weather.last
+        @weatherl.update_attributes({tempf: tempf, tempc: tempc, wicon: wicon, wtext: wtext})
       end
+      
+      
+      
     end
-
-    
-    
   end
 end
