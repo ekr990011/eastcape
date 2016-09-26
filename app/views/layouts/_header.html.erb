@@ -30,9 +30,17 @@
     </nav>
     <div class="col-xs-12 div-tp"></div>
   </div>
+  
   <%= image_tag(('water3.jpg'), class: "header_image") %>
-  <div class="col-xs-6 col-xs-offset-2">
-  <h1  class="col-xs-12 headert">East Cape Baja</h1>
-  <p class="col-xs-6 col-xs-offset-5 tagline">Pirates' Cove</p>
+  
+  <div class="col-xs-6 col-xs-offset-1">
+    <h1  class="col-xs-12 headert">East Cape Baja</h1>
+    <p class="col-xs-6 col-xs-offset-5 tagline">Pirates' Cove</p>
   </div>
+
+  <div class="col-xs-2 dollar">
+    Peso Exchange Rate  
+    <%= dollar.dollar %>US  |
+    <%= dollar.candollar %>CAN
+  </div>  
 </header>

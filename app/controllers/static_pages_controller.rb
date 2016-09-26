@@ -12,6 +12,7 @@ class StaticPagesController < ApplicationController
   def news
     @titlehb = News.last.title
     @linkhb = News.last
+    @newsdate = News.last.date
     
     @titlevm = Vm.last.title
     @linkvm  = Vm.last

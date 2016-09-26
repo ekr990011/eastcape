@@ -13,13 +13,14 @@
      <li><%= link_to "Contact", contact_path %></li>
      
      <% if session[:user_id].nil? %>
-     <li><%= link_to "Login", new_session_path %></li>
-     <li><%= link_to "Signup", new_user_path %></li>
+       <li><%= link_to "Login", new_session_path %></li>
+       <li><%= link_to "Signup", new_user_path %></li>
+       <div class="col-xs-12 div-tp"></div>
      <% else %>
-     <li><%= link_to "Log out", logout_path, method: :delete,
-                                         data: { confirm: "Are you sure?" } %>
-     </li>
-     <div class="col-xs-12 div-tp"></div>
+       <li><%= link_to "Log out", logout_path, method: :delete,
+                                           data: { confirm: "Are you sure?" } %>
+       </li>
+       <div class="col-xs-12 div-tp"></div>
      <% end %>
    </ul>
   </div>

@@ -3,15 +3,25 @@ namespace :noko do
     require 'mechanize'
     
     @a = Mechanize.new
-    @page = @a.get('http://www.hotelbuenavista.com/n/fish-report')
-    @title = @page.search('p+ .blog-item a')
-    @date = @page.search('p+ .blog-item i')
-    News.create do |p|
-        p.title = @title.text
-        p.url   = @title.attribute('href').text
-        p.date  = @date.text
-        p.save
+    @page = @a.get('http://www.x-rates.com/table/?from=MXN&amount=1')
+    @dollar = @page.search('.ratesTable:nth-child(4) tr:nth-child(1) .rtRates+ .rtRates a').text.slice(0..4)
+    @candollar = @page.search('.ratesTable:nth-child(4) tr:nth-child(6) .rtRates+ .rtRates a').text.slice(0..4)
+    Dollar.create do |x|
+      x.dollar = @dollar
+      x.candollar = @candollar
     end
+    
+    # @a = Mechanize.new
+    # @page = @a.get('http://www.hotelbuenavista.com/n/fish-report')
+    # sleep 60.seconds
+    # @title = @page.search('p+ .blog-item a')
+    # @date = @page.search('p+ .blog-item i')
+    # News.create do |p|
+    #     p.title = @title.text
+    #     p.url   = @title.attribute('href').text
+    #     p.date  = @date.text
+    #     p.save
+    # end
       
     @a = Mechanize.new
     @page = @a.get('https://vanwormerresorts.com/fishing-report')
