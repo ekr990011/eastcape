@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       redirect_to '/forums'
     else
       redirect_to '/signup'
+      flash[:danger] = "Oh no! Someone already has that name."
     end
   end
   

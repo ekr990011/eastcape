@@ -11,17 +11,16 @@ namespace :noko do
       x.candollar = @candollar
     end
     
-    # @a = Mechanize.new
-    # @page = @a.get('http://www.hotelbuenavista.com/n/fish-report')
-    # sleep 60.seconds
-    # @title = @page.search('p+ .blog-item a')
-    # @date = @page.search('p+ .blog-item i')
-    # News.create do |p|
-    #     p.title = @title.text
-    #     p.url   = @title.attribute('href').text
-    #     p.date  = @date.text
-    #     p.save
-    # end
+    @a = Mechanize.new
+    @page = @a.get('https://eastcapeangler.wordpress.com/')
+    @title = @page.search('.tag-adventure.tag-roosterfish .post-title a')
+    @date = @page.search('.tag-adventure.tag-roosterfish .post-meta a:nth-child(1)')
+    News.create do |p|
+        p.title = @title.text
+        p.url   = @title.attribute('href').text
+        p.date  = @date.text
+        p.save
+    end
       
     @a = Mechanize.new
     @page = @a.get('https://vanwormerresorts.com/fishing-report')
@@ -67,7 +66,7 @@ namespace :noko do
       if @google_list.exclude?(x.text)
         Google.create do |y|
           y.title = x.text
-          y.url = x.uri.to_s.slice(7..-1).split("&sa")[0]
+          y.url = x.uri.to_s.slice(7..-1).split("&sa")[0] 
         end
       end
     end

@@ -1,11 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  commenter: MyString
-  body: MyText
-  post_id: 
-
-two:
-  commenter: MyString
-  body: MyText
-  post_id: 
+  reply: MyString
+  user_id: 
+  forum_id: 

@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     redirect_to '/forums'
   else
     redirect_to new_session_path
+    flash[:alert] = "Oops.. Houston, we have a problem..."
   end 
   end
   

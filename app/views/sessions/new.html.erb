@@ -1,11 +1,16 @@
 <div class="white-space col-md-12">
-  <div class="login col-md-3">
+  
+  <% if flash[:alert] %>
+    <div class="alert-danger col-xs-4 login-alert"><%= flash[:alert] %></div><div class="col-xs-6 login-alert"></div><br>
+  <% end %>
+  
+
+  <div class="login col-md-4">
     <%= form_for(:session, url: sessions_path) do |f| %>
     <div class="little-space-top"></div>
-    <%= f.text_field :username, :placeholder => "Username" %>
-    <div class="little-space"></div>
-    <%= f.password_field :password, :placeholder => "Password" %>
-    <%= f.submit "Log in", class: "btn btn-primary little-space" %>
+    <%= f.text_field :username, :placeholder => "Username", class: "col-xs-12" %>
+    <%= f.password_field :password, :placeholder => "Password", class: "col-xs-12 little-space" %>
+    <%= f.submit "Log in", class: "btn btn-lg btn-primary little-space" %>
     <% end %>
   </div>
 </div>

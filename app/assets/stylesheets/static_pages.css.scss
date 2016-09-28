@@ -80,9 +80,12 @@ html, body, .container-fluid {
     float: left;
     bottom: 0%;
     left: 0%;
-    z-index: 3;
     color: #ff6600;
     text-shadow: .06em .06em #660000;
+}
+
+.above-all {
+    z-index: 10;
 }
 
 .nav > li > a {
@@ -307,18 +310,26 @@ html, body, .container-fluid {
 }
 
 .login {
+    margin-top: 1%;
     height: 30%;
     font-size: 180%;
     background-color: #ffc299;
     border-radius: 1em;
 }
 
+.login-alert {
+    margin-top: 1%;
+    border-radius: 2em;
+    height: 5%;
+    font-size: 150%;
+}
+
 .little-space {
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 .little-space-top {
-    margin-top: 15%;
+    margin-top: 11%;
 }
 
 /* Create User */
