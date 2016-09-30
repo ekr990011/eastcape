@@ -1,5 +1,5 @@
 <header class="col-xs-12 col-sm-12 col-md-12 header">
-<% provide(:title, "About") %>  
+  
   <div class="weather-widget col-xs-2">
   <%= link_to "http://www.accuweather.com/en/mx/los-barriles/236828/weather-forecast/236828#menu-country", :target => "_blank" do %>
     
@@ -38,9 +38,11 @@
     <p class="col-xs-6 col-xs-offset-5 tagline">Pirates' Cove</p>
   </div>
 
-  <div class="col-xs-2 dollar">
-    Peso Exchange Rate  
-    <%= dollar.dollar %>US  |
-    <%= dollar.candollar %>CAN
+  <div class="col-xs-3 dollar">
+    <%= link_to "http://www.x-rates.com/table/?from=MXN&amount=1", target: :_blank do %>
+    Peso Exchange Rate <br> 
+    <%= dollar.dollar %> US  |
+    <%= dollar.candollar %> CAN
+    <% end %>
   </div>  
 </header>

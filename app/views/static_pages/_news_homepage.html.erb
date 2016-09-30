@@ -1,19 +1,131 @@
-<%= link_to @news_homepage.url, target: :_blank do %>
-  <div class="col-xs-12 col-sm-12 col-md-12 news_homepage">
-    <%= @news_homepage.title %>
-  </div>
+<% if @random == 0 %>
+  <%= link_to @hb.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Hotel Buena Vista Report</b> | <%= @hb.date %><br>
+      <%= @hb.title %>
+    </div>
+  <% end %>
+<% elsif @random == 1 %>
+  <%= link_to @vm.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Hotel Las Palmas de Cortez</b> | <%= @vm.date %><br>
+      <%= @vm.title %>
+    </div>
+  <% end %>
+<% elsif @random == 2 %>
+  <%= link_to @rancho.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Rancho Leonero</b> | <%= @rancho.date %><br>
+      <%= @rancho.title %>
+    </div>
+  <% end %>
+<% elsif @random == 3 %>
+    <%= link_to @random_google_entry.url, target: :_blank do %>
+      <div class="news_homepage">
+        <b>Google News</b><br>
+        <%= @random_google_entry.title %>
+      </div>
+  <% end %>
+<% elsif @random == 4 %>
+  <%= link_to @pete.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Pete</b> | <%= @pete.date %><br>
+      <%= @pete.title %>
+    </div>
+  <% end %>
+<% elsif @random == 5 %>
+  <%= link_to @wunder.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Wunderground</b><br>
+      <%= @wunder.title %>
+    </div>
+  <% end %>
 <% end %>
 
-<%= link_to @news_vm.url , target: :_blank do %>
-  <div class="col-xs-12 col-sm-12 col-md-12 news_homepage">
-    <%= @news_vm.title %>
-  </div>
+<% if @random == 5 %>
+  <%= link_to @hb.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Hotel Buena Vista Report</b> | <%= @hb.date %><br>
+      <%= @hb.title %>
+    </div>
+  <% end %>
+<% elsif @random == 4 %>
+  <%= link_to @vm.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Hotel Las Palmas de Cortez</b> | <%= @vm.date %><br>
+      <%= @vm.title %>
+    </div>
+  <% end %>
+<% elsif @random == 3 %>
+  <%= link_to @rancho.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Rancho Leonero</b> | <%= @rancho.date %><br>
+      <%= @rancho.title %>
+    </div>
+  <% end %>
+<% elsif @random == 2 %>
+    <%= link_to @random_google_entry.url, target: :_blank do %>
+      <div class="news_homepage">
+        <b>Google News</b><br>
+        <%= @random_google_entry.title %>
+      </div>
+  <% end %>
+<% elsif @random == 1 %>
+  <%= link_to @pete.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Pete</b> | <%= @pete.date %><br>
+      <%= @pete.title %>
+    </div>
+  <% end %>
+<% elsif @random == 0 %>
+  <%= link_to @wunder.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Wunderground</b><br>
+      <%= @wunder.title %>
+    </div>
+  <% end %>
 <% end %>
 
-<%= link_to @rancho.url, target: :_blank do %>
-  <div class="col-xs-12 col-sm-12 col-md-12 news_homepage">
-    <%= "#{@rancho.date} " %>
-    <%= @rancho.title %>
-  </div>
+<% if @random == 4 %>
+  <%= link_to @hb.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Hotel Buena Vista Report</b> | <%= @hb.date %><br>
+      <%= @hb.title %>
+    </div>
+  <% end %>
+<% elsif @random == 3 %>
+  <%= link_to @vm.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Hotel Las Palmas de Cortez</b> | <%= @vm.date %><br>
+      <%= @vm.title %>
+    </div>
+  <% end %>
+<% elsif @random == 0 %>
+  <%= link_to @rancho.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Rancho Leonero</b> | <%= @rancho.date %><br>
+      <%= @rancho.title %>
+    </div>
+  <% end %>
+<% elsif @random == 5 %>
+    <%= link_to @random_google_entry.url, target: :_blank do %>
+      <div class="news_homepage">
+        <b>Google News</b><br>
+        <%= @random_google_entry.title %>
+      </div>
+  <% end %>
+<% elsif @random == 2 %>
+  <%= link_to @pete.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Pete</b> | <%= @pete.date %><br>
+      <%= @pete.title %>
+    </div>
+  <% end %>
+<% elsif @random == 1 %>
+  <%= link_to @wunder.url, target: :_blank do %>
+    <div class="news_homepage">
+      <b>Wunderground</b><br>
+      <%= @wunder.title %>
+    </div>
+  <% end %>
 <% end %>
-

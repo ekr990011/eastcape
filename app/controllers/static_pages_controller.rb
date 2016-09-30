@@ -1,9 +1,18 @@
 class StaticPagesController < ApplicationController
+  
   def home
+    @random = rand(6)
     @forum_homepage = Forum.limit(3)
-    @news_homepage = News.last
-    @news_vm = Vm.last
+    @hb = News.last
+    @vm = Vm.last
     @rancho = Rancho.last
+    @google = Google.where("created_at >= ?", 1.day.ago).limit(8)
+    @pete = Pete.last
+    @wunder = Wunderground.last
+    
+    @count = @google.count
+    @random_google = rand(@count)
+    @random_google_entry = @google.offset(@random_google).first
   end
   
   def forum
@@ -30,8 +39,6 @@ class StaticPagesController < ApplicationController
     
     @title_wunder = Wunderground.last.title
     @url_wunder = Wunderground.last.url
-    
-    
   end
   
   def advertise
@@ -45,4 +52,5 @@ class StaticPagesController < ApplicationController
   
   def fishing
   end
+  
 end

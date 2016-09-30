@@ -20,7 +20,7 @@ html, body, .container-fluid {
 
 /* Header/Footer */
 
-.dollar {
+.dollar a {
     position: absolute;
     top: 0%;
     right: 0%;
@@ -28,6 +28,7 @@ html, body, .container-fluid {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color: #ff944d;
     text-shadow: .05em .05em .05em #803300;
+    text-align: right;
 }
 
 .tagline {
@@ -257,6 +258,10 @@ html, body, .container-fluid {
 .forum-title {
     text-align: center;
     font-size: 125%;
+}
+
+.news-thome {
+    margin-bottom: 2.8%;
 }
 
 .news_homepage {
