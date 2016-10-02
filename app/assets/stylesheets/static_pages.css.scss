@@ -281,6 +281,10 @@ html, body, .container-fluid {
     border-radius: 1em;
 }
 
+.news_homepage a:link, a:hover {
+    text-decoration: none;
+}
+
 .video {
     position: relative;
     right: 1.5%;
