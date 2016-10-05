@@ -8,3 +8,5 @@
 
 admin = User.create(username: 'admin', email: 'admin@email.com', password: 'password', 
                     password_confirmation: 'password', role: 'admin')
+                    
+k = User.create(username: 'k', email: 'k', password: 'k', password_confirmation: 'k', role: nil)

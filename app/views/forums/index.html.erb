@@ -4,22 +4,26 @@
     <div class="alert-success"><%= flash[:success] %></div>
 <% end %>
 
-<div class="col-md-12">
+<div class="col-md-2 col-md-push-10 forum-adsr">
+  ads right
+</div>
+
+<div class="col-md-10 col-md-pull-2">
   <h2>East Cape's Pirate Cove</h2>
 </div>
 
+<div class="col-md-10 col-md-pull-2 forum-index-box">
 <%= link_to new_forum_path do %>
   <div class="col-md-3 btn btn-lg btn-primary" id="new-post"><h4>Create New Post</h4></div>
 <% end %>
 
-<%= will_paginate %>
-
 <% @forums.each do |forum| %>
   <div class="forum-index col-md-6 center-box">
     <%= link_to forum_path(forum) do %>
-      <div class="posts-title col-md-8 center-box">
+      <div class="posts-title col-md-12 center-box">
         <b><%= forum.title %></b><br>
         <span class="date-index"><%= forum.created_at %>
+        <div>
         posted by:
           <% if forum.user_id.nil? %>
             Anonymous
@@ -27,6 +31,7 @@
             <%= User.find(forum.user_id).username %>
           <% end %>
         </span>
+        </div>
       </div>
     <% end %>
 
@@ -39,6 +44,8 @@
   </div>
 <% end %>
   
-<div class="col-md-12">
+<div class="col-md-10">
   <%= will_paginate %>
+</div>
+
 </div>

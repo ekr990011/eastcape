@@ -118,10 +118,20 @@ html, body, .container-fluid {
 
 /* Index */
 
+.forum-adsr {
+    height: 110%;
+    // border-style: ridge;
+}
+
+.forum-index-box {
+    height: 100%;
+}
+
 .forum-index {
     height: 27%;
     overflow: hidden;
     margin-bottom: 1%;
+    // border-style: ridge;
 }
 
 .posts-title {
@@ -369,3 +379,14 @@ html, body, .container-fluid {
     font-size: 140%;
 }
 
+// Contact Form
+
+.contact-form {
+    height: 100%;
+}
+
+.contact-input {
+    border-style: ridge;
+}
+
+// Advertise show

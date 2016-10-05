@@ -1,0 +1,26 @@
+    <% if flash[:danger] %>
+      <div class="alert alert-danger"><%= flash[:danger] %></div>
+    <% end %>
+
+
+<div class="col-xs-12 contact-form">
+  
+<%= form_for @advertise do |f| %>
+  
+<div class="col-xs-6 form-group contact-input">
+<h1><%= f.label :Message %></h1>
+<%= f.text_area :text, class: "input-lg form-control", rows: "10" %><br>
+
+<%= f.label :email  %>
+<%= f.text_area :email, class: "input-lg form-control", rows: "1" %><br>
+
+<%= f.label :confirm_email %>
+<%= f.text_area :email_confirmation, class: "input-lg form-control", rows: "1" %><br>
+
+
+<%= f.submit "Send Feedback", class: "btn btn-primary btn-lg" %>
+
+</div>
+<% end %>
+
+</div>

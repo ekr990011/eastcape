@@ -20,11 +20,13 @@
     </div>
   <% end %>
 <% elsif @random == 3 %>
+  <% if @random_google_entry != nil %>
     <%= link_to @random_google_entry.url, target: :_blank do %>
       <div class="news_homepage">
         <b>Google News</b><br>
         <%= @random_google_entry.title %>
       </div>
+    <% end %>
   <% end %>
 <% elsif @random == 4 %>
   <%= link_to @pete.url, target: :_blank do %>
@@ -64,11 +66,13 @@
     </div>
   <% end %>
 <% elsif @random == 2 %>
+  <% if @random_google_entry != nil %>
     <%= link_to @random_google_entry.url, target: :_blank do %>
       <div class="news_homepage">
         <b>Google News</b><br>
         <%= @random_google_entry.title %>
       </div>
+    <% end %>
   <% end %>
 <% elsif @random == 1 %>
   <%= link_to @pete.url, target: :_blank do %>
@@ -108,11 +112,13 @@
     </div>
   <% end %>
 <% elsif @random == 5 %>
+  <% if @random_google_entry != nil %>
     <%= link_to @random_google_entry.url, target: :_blank do %>
       <div class="news_homepage">
         <b>Google News</b><br>
         <%= @random_google_entry.title %>
       </div>
+    <% end %>
   <% end %>
 <% elsif @random == 2 %>
   <%= link_to @pete.url, target: :_blank do %>

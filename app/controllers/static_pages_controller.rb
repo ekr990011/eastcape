@@ -41,13 +41,7 @@ class StaticPagesController < ApplicationController
     @url_wunder = Wunderground.last.url
   end
   
-  def advertise
-  end
-  
   def about
-  end
-  
-  def contact
   end
   
   def fishing

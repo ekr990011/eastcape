@@ -18,6 +18,7 @@
   <%= @forum.post %>
 
   <% if ((current_user != nil) && (current_user == @forum.user))  || (current_user && current_user.admin?) %>
+  <br>
     <%= link_to 'Edit', edit_forum_path(@forum.id) %>
     |
     <%= link_to 'Delete', @forum,

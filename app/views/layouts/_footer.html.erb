@@ -10,8 +10,8 @@
   <div class="headernav"> 
    <ul class="nav nav-tabs">
      <li><%= link_to "Home", root_path %></li>
-     <li><%= link_to "Advertise", advertise_path %></li>
-     <li><%= link_to "Contact", contact_path %></li>
+     <li><%= link_to "Advertise", new_advertise_path %></li>
+     <li><%= link_to "Contact", new_contact_path %></li>
      
      <% if session[:user_id].nil? %>
        <li><%= link_to "Login", new_session_path %></li>

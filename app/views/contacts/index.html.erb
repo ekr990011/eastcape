@@ -1,0 +1,25 @@
+<h2>Contact Us</h2>
+<% @contact.each do |x| %>
+<%= link_to contact_path(x) do %>
+<%= x.text %><br>
+<%= x.email %><br>
+<%= x.id %><br><br>
+<% end %>
+<% end %>
+<%# link_to 'Delete', contact_path(x),
+   # method: :delete %><br><br>
+<%# end %>
+
+
+<br>
+<h2>Advertise Contact</h2>
+<% @advertise.each do |x| %>
+<%= link_to advertise_path(x) do %>
+<%= x.text %><br>
+<%= x.email %><br>
+<%= x.id %><br><br><br>
+<% end %>
+<% end %>
+<%# link_to 'Delete', advertise_path(x),
+   # method: :delete %><br><br>
+<%# end %>
