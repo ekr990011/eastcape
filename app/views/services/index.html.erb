@@ -1,0 +1,45 @@
+
+
+
+    
+<div class="col-xs-10 static-fishing">
+  <div class="col-md-6 video">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W44znJwxnn8"></iframe>
+    </div>
+  </div>
+ This a listing of services in the East Cape area.<br>  
+<p> If you don't see what you are looking for,
+ post a question on our forum and a local pirate will probably be able to answer it. 
+
+<div class="col-xs-10 static-fishing-ad">
+  
+</div>
+
+<div class="col-xs-10 fishing-directory">
+
+<h3>Services</h3><br>
+
+
+<% @service.each do |x| %>
+  <b><%= x.biz_name %><br></b>
+  <% if x.tel != "" %>
+    <%= x.tel %><br>
+  <% elsif x.tel2 != "" %>
+    <%= x.tel2 %><br>
+  <% end %>  
+  <%= link_to  x.website, "http://#{x.website}", target: :_blank %> <%= x.email %><br>
+  <%= x.description %>
+  
+  <% if (current_user && current_user.admin?) %>
+    <br>
+    <%= link_to 'Edit', edit_service_path(x) %>
+    |
+    <%= link_to 'Delete', service_path(x),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<br><br>
+<% end %>
+
+</div>

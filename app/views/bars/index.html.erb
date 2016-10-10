@@ -1,0 +1,32 @@
+<div class="col-xs-10 static-bar-ad">
+  
+</div>
+
+<div class="col-xs-10 bar-directory">
+
+<h3>Restaraunts and Bars</h3><br>
+
+
+<% @bar.each do |x| %>
+  <b><%= x.biz_name %><br></b>
+  <% if x.tel != "" %>
+    <%= x.tel %><br>
+  <% elsif x.tel2 != "" %>
+    <%= x.tel2 %><br>
+  <% end %>  
+  <%= link_to  x.website, "http://#{x.website}", target: :_blank %> <%= x.email %><br>
+  <%= x.city %>
+  <%= x.description %>
+  
+  <% if (current_user && current_user.admin?) %>
+    <br>
+    <%= link_to 'Edit', edit_bar_path(x) %>
+    |
+    <%= link_to 'Delete', bar_path(x),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<br><br>
+<% end %>
+
+</div>

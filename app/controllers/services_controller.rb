@@ -1,46 +1,46 @@
-class FishingsController < ApplicationController
-    before_action :admin, only: [:new, :create, :destroy, :show, :edit, :update]
+class ServicesController < ApplicationController
+before_action :admin, only: [:new, :create, :destroy, :show, :edit, :update]
   
   
   def index
-    @fishing = Fishing.all
+    @service = Service.all
   end
   
   def new
-    @fishing = Fishing.new
+    @service = Service.new
   end
   
   def edit
-    @fishing = Fishing.find(params[:id])
+    @service = Service.find(params[:id])
   end
   
   def update
-  @fishing = Fishing.find(params[:id])
+  @service = Service.find(params[:id])
  
-    if @fishing.update(fishing_params)
-      redirect_to fishings_path
+    if @service.update(service_params)
+      redirect_to services_path
       flash[:success] = "Thanks for the Update!"
     else
-      render edit_fishing_path
+      render edit_service_path
       flash[:alert] = "Please provide input!"
     end
   end
   
   def create
-    @fishing = Fishing.new(fishing_params)
+    @service = Service.new(service_params)
     
-    if @fishing.save
+    if @service.save
       redirect_to '/'
       flash[:success] = "Thanks for the Input!"
     else
-      redirect_to new_fishing_path
+      redirect_to new_service_path
       flash[:danger] = "Oops please enter something."
     end
   end
     
   def destroy
-    @fishing = Fishing.find(params[:id])
-    @fishing.destroy
+    @service = Service.find(params[:id])
+    @service.destroy
     flash[:success] = "Successfully Deleted!"
     redirect_to '/'
   end
@@ -52,8 +52,8 @@ class FishingsController < ApplicationController
  private
   
   
-  def fishing_params
-    params.require(:fishing).permit(:biz_name, :tel, :tel2, :website, :email, :description)
+  def service_params
+    params.require(:service).permit(:biz_name, :tel, :tel2, :website, :email, :description)
   end
   
   def admin
@@ -63,3 +63,5 @@ class FishingsController < ApplicationController
     end
   end
 end
+
+

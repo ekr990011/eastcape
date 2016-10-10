@@ -1,0 +1,35 @@
+
+<% if flash[:danger] %>
+    <div class="alert alert-danger"><%= flash[:danger] %></div>
+<% end %>
+
+<div class="col-xs-12 realestate-form">
+  
+<%= form_for @realestate do |f| %>
+  
+<div class="col-xs-6 form-group fishing-input">
+<h1><%= f.label :Business_Name %></h1>
+<%= f.text_area :biz_name, class: "input-lg form-control", rows: "1" %><br>
+
+<%= f.label :Telephone1  %>
+<%= f.text_area :tel, class: "input-lg form-control", rows: "1" %><br>
+
+<%= f.label :Telephone2  %>
+<%= f.text_area :tel2, class: "input-lg form-control", rows: "1" %><br>
+
+<%= f.label :Website  %>
+<%= f.text_area :website, class: "input-lg form-control", rows: "1" %><br>
+
+<%= f.label :email  %>
+<%= f.text_area :email, class: "input-lg form-control", rows: "1" %><br>
+
+<%= f.label :Description  %>
+<%= f.text_area :description, class: "input-lg form-control", rows: "1" %><br>
+
+
+<%= f.submit "Store", class: "btn btn-primary btn-lg" %>
+
+</div>
+<% end %>
+
+</div>

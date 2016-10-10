@@ -11,13 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004170749) do
+ActiveRecord::Schema.define(version: 20161008155551) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "biz_name"
+    t.string   "tel"
+    t.string   "tel2"
+    t.string   "website"
+    t.string   "email"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "advertises", force: :cascade do |t|
     t.text     "text"
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bars", force: :cascade do |t|
+    t.string   "biz_name"
+    t.string   "tel"
+    t.string   "tel2"
+    t.string   "website"
+    t.string   "email"
+    t.string   "city"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -43,6 +66,17 @@ ActiveRecord::Schema.define(version: 20161004170749) do
     t.string   "candollar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fishings", force: :cascade do |t|
+    t.string   "biz_name"
+    t.string   "tel"
+    t.string   "tel2"
+    t.string   "website"
+    t.string   "email"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "forums", force: :cascade do |t|
@@ -84,6 +118,39 @@ ActiveRecord::Schema.define(version: 20161004170749) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "real_estates", force: :cascade do |t|
+    t.string   "biz_name"
+    t.string   "tel"
+    t.string   "tel2"
+    t.string   "website"
+    t.string   "email"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "realestates", force: :cascade do |t|
+    t.string   "biz_name"
+    t.string   "tel"
+    t.string   "tel2"
+    t.string   "email"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "biz_name"
+    t.string   "tel"
+    t.string   "tel2"
+    t.string   "email"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

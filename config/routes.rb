@@ -2,13 +2,16 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'about' =>      'static_pages#about'
   get 'news' =>       'static_pages#news'
-  get 'fishing' =>    'static_pages#fishing'
   
   get 'signup' =>     'users#new'
   resources :users
   
+  resources :bars
+  resources :realestates
+  resources :services
+  resources :activities
+  resources :fishings
   resources :advertises
-  
   resources :contacts
   
   resources :forums do

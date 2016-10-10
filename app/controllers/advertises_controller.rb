@@ -17,9 +17,9 @@ class AdvertisesController < ApplicationController
   end
   
   
-    def show
-      @advertise = Advertise.find(params[:id])
-    end
+  def show
+    @advertise = Advertise.find(params[:id])
+  end
   
   # def destroy
   #   @advertise = Advertise.find(params[:id])
