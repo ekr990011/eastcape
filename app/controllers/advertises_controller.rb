@@ -1,4 +1,5 @@
 class AdvertisesController < ApplicationController
+  invisible_captcha only: [:create], honeypot: :website
   
   def new
     @advertise = Advertise.new

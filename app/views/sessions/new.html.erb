@@ -11,6 +11,7 @@
     <div class="little-space-top"></div>
     <%= f.text_field :username, :placeholder => "Username", class: "col-xs-12" %>
     <%= f.password_field :password, :placeholder => "Password", class: "col-xs-12 little-space" %>
+    <%= f.invisible_captcha :password_confirmation %>
     <%= f.submit "Log in", class: "btn btn-lg btn-primary little-space" %>
     <% end %>
   </div>

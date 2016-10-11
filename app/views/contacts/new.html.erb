@@ -11,6 +11,8 @@
 <h1><%= f.label :Feedback %></h1>
 <%= f.text_area :text, class: "input-lg form-control", rows: "10" %><br>
 
+<%= f.invisible_captcha :website %>
+
 <%= f.label :email  %>
 <%= f.text_area :email, class: "input-lg form-control", rows: "1" %><br>
 

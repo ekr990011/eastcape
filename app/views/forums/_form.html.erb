@@ -20,6 +20,8 @@
       <%= f.label :title %><br>
       <%= f.text_field :title, class: "form-control input-lg" %>
     </div>
+    
+    <%= f.invisible_captcha :website %>
  
     <div class="col-md-12 cppost form-group" 
       <%= f.label :post %><br>

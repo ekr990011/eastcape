@@ -2,6 +2,7 @@
   <p>
     <%= f.text_area :reply, class: "form-control input-lg", rows: 4, id: "comment" %>
   </p>
+  <%= f.invisible_captcha :website %>
   <p>
     <%= f.submit "Comment", class: "btn btn-info btn-lg" %>
   </p>

@@ -1,5 +1,7 @@
 class ForumsController < ApplicationController
   before_action :forum_owner, only: [:edit, :update, :destroy]
+  invisible_captcha only: [:create, :update], honeypot: :website
+
   
   def _forum_homepage
     @forum_homepage = Forum.limit(3)
@@ -24,10 +26,10 @@ class ForumsController < ApplicationController
  
   def create
   @forum = Forum.new(forum_params)
-  unless current_user.nil?
-   @forum.user_id = current_user.id
-  else
-  end 
+    unless current_user.nil?
+     @forum.user_id = current_user.id
+    else
+    end 
   
     if @forum.save
       redirect_to @forum

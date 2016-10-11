@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  invisible_captcha only: [:create], honeypot: :password_confirmation
   
   def new
   end

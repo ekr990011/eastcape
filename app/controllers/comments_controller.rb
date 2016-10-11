@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :find_forum
   before_action :find_comment, only: [:edit, :update, :destroy, :comment_owner]
   before_action :comment_owner, only: [:destroy, :edit, :update]
+  invisible_captcha only: [:create, :update], honeypot: :website
   
   def create
     @comment = @forum.comments.new(comment_params)

@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   before_action :admin, only: [:index, :destroy, :show]
+  invisible_captcha only: [:create], honeypot: :website
   
   def index
     @contact = Contact.all
