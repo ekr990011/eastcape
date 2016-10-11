@@ -10,6 +10,7 @@
 <%= f.label :username %>
 <%= f.text_field :username, class: "form-control" %>
 </div>
+<%= f.invisible_captcha :website %>
 <div class="form-group">
 <%= f.label :email %>
 <%= f.text_field :email, class: "form-control" %>

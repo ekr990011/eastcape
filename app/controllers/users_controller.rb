@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  invisible_captcha only: [:create], honeypot: :website
   
   def new
     @user = User.new
