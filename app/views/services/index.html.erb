@@ -1,16 +1,14 @@
-
-
-
-    
+<% provide(:title, "Services") %>
 <div class="col-xs-10 static-fishing">
   <div class="col-md-6 video">
     <div class="embed-responsive embed-responsive-16by9">
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W44znJwxnn8"></iframe>
     </div>
   </div>
- This a listing of services in the East Cape area.<br>  
-<p> If you don't see what you are looking for,
- post a question on our forum and a local pirate will probably be able to answer it. 
+  This a listing of services in the East Cape area.<br> 
+    
+</div>
+
 
 <div class="col-xs-10 static-fishing-ad">
   
@@ -18,7 +16,7 @@
 
 <div class="col-xs-10 fishing-directory">
 
-<h3>Services</h3><br>
+<h1>Services</h1><br>
 
 
 <% @service.each do |x| %>
@@ -41,5 +39,6 @@
   <% end %>
 <br><br>
 <% end %>
-
+<h4>If you don't see what you are looking for,
+ post a question on our forum and a local pirate will probably be able to answer it. </h4>
 </div>
