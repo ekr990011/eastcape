@@ -1,12 +1,12 @@
 <% provide(:title, "Which Pirate are You?") %>
-<div class="white-space col-md-12">
+<div class="white-space col-xs-12">
   
   <% if flash[:alert] %>
     <div class="alert-danger col-xs-4 login-alert"><%= flash[:alert] %></div><div class="col-xs-6 login-alert"></div><br>
   <% end %>
   
 
-  <div class="login col-md-4">
+  <div class="login col-xs-4">
     <%= form_for(:session, url: sessions_path) do |f| %>
     <div class="little-space-top"></div>
     <%= f.text_field :username, :placeholder => "Username", class: "col-xs-12" %>

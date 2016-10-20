@@ -1,6 +1,6 @@
 <% provide(:title, @forum.title) %>
 
-<div class="col-md-8 showpost">
+<div class="col-xs-8 showpost">
     
     <% if flash[:success] %>
         <div class="alert alert-success"><%= flash[:success] %></div>
@@ -9,11 +9,11 @@
         <% else %>
     <% end %>
 
-    <div class="col-md-12">
+    <div class="col-xs-12">
         <%= render 'forums/forum_post' %>
     </div>
 
-    <div class="col-md-12 comment-area">
+    <div class="col-xs-12 comment-area">
         <br>
         <h4>Comments:</h4>
         <%= pluralize(@comment.count, "Reply") %><br>
@@ -21,7 +21,7 @@
 
     </div>
 
-    <div class="col-md-10 comment-form-area">
+    <div class="col-xs-10 comment-form-area">
         <h3>Add a comment:</h3>
         <%= render 'comments/comment_form' %>
     </div>
