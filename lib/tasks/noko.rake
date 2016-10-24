@@ -26,7 +26,7 @@ namespace :noko do
       
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
-    @page = @a.get('https://vanwormerresorts.com/fishing-report')
+    @page = @a.get('http://vanwormerresorts.com/fishing-report')
     @title = @page.search('li:nth-child(1) .desc')
     @date = @page.search('li:nth-child(1) span')
     @url = @page.search('li:nth-child(1) .read_more')
