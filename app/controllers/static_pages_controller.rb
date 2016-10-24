@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
     @pete = Pete.last
     @wunder = Wunderground.last
     
-    @image_iframe = "assets/LB.Flag1.jpg"
+    @image_iframe = "LB.Flag1.jpg"
     
     @count = @google.count
     @random_google = rand(@count)

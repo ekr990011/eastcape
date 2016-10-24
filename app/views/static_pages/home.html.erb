@@ -17,7 +17,8 @@
         
     <div class="col-xs-6 video">
         <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="<%= @image_iframe %>"></iframe>
+            <!--<iframe class="embed-responsive-item" src="<%# @image_iframe %>"></iframe>-->
+            <%= image_tag("#{@image_iframe}") %>
         </div>
             <p class="static_text">
             <b>
