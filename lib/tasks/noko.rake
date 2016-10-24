@@ -3,6 +3,7 @@ namespace :noko do
     require 'mechanize'
     
     @a = Mechanize.new
+    @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('http://www.x-rates.com/table/?from=MXN&amount=1')
     @dollar = @page.search('.ratesTable:nth-child(4) tr:nth-child(1) .rtRates+ .rtRates a').text.slice(0..4)
     @candollar = @page.search('.ratesTable:nth-child(4) tr:nth-child(6) .rtRates+ .rtRates a').text.slice(0..4)
@@ -12,6 +13,7 @@ namespace :noko do
     end
     
     @a = Mechanize.new
+    @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('https://eastcapeangler.wordpress.com/')
     @title = @page.search('.tag-adventure.tag-roosterfish .post-title a')
     @date = @page.search('.tag-adventure.tag-roosterfish .post-meta a:nth-child(1)')
@@ -22,17 +24,18 @@ namespace :noko do
         p.save
     end
       
-    @a = Mechanize.new
-    @page = @a.get('https://vanwormerresorts.com/fishing-report')
-    @title = @page.search('li:nth-child(1) .desc')
-    @date = @page.search('li:nth-child(1) span')
-    @url = @page.search('li:nth-child(1) .read_more')
-    Vm.create do |p|
-      p.title = @title.text
-      p.url   = @url.attribute('href').text
-      p.date  = @date.text
-      p.save
-    end
+    # @a = Mechanize.new
+    # @a.user_agent_alias = 'Mac Safari 4'
+    # @page = @a.get('https://vanwormerresorts.com/fishing-report')
+    # @title = @page.search('li:nth-child(1) .desc')
+    # @date = @page.search('li:nth-child(1) span')
+    # @url = @page.search('li:nth-child(1) .read_more')
+    # Vm.create do |p|
+    #   p.title = @title.text
+    #   p.url   = @url.attribute('href').text
+    #   p.date  = @date.text
+    #   p.save
+    # end
    
    
     @a = Mechanize.new
@@ -50,6 +53,7 @@ namespace :noko do
     
 
     @a = Mechanize.new
+    @a.user_agent_alias = 'Mac Safari 4'
     @page = @a.get('https://news.google.com/')
     @newsf = @page.form_with(:action => "//www.google.com/search?cf=all&hl=en&pz=1&ned=us")
     @newsf.q = "east cape baja"
@@ -61,7 +65,8 @@ namespace :noko do
                     "Past week", "Past month", "Past year", "Archives", "Sorted by date",
                     "2", "3", "4", "5", "6", "7", "8", "9", "10", "Next", "Advanced search",
                     "RSS", "Search Help", "Send feedback", "Business Solutions", "Privacy", "Terms", "About Google", 
-                    "Google Home", "Advertising Programs"]
+                    "Google Home", "Advertising Programs", "Search settings", "Even more »", "Docs", "Photos", "Finance",
+                    "Blogger", "Wallet", "Mobile", "Translate", "Calendar", "More", "News", "Google+", "here"]
     @search.each do |x|
       if @google_list.exclude?(x.text)
         Google.create do |y|
@@ -73,6 +78,7 @@ namespace :noko do
   
   
   @a = Mechanize.new
+  @a.user_agent_alias = 'Mac Safari 4'
   @page = @a.get('https://www.wunderground.com/blog/Geary/gearys-sea-of-cortez-weather')
   @title = @page.search('#show-entry:nth-child(1) .article a')
   @title.each do |x|
@@ -86,6 +92,7 @@ namespace :noko do
   
   
   @a = Mechanize.new
+  @a.user_agent_alias = 'Mac Safari 4'
   @page = @a.get('http://www.petethomasoutdoors.com')
   @title = @page.search('#entry-6a0120a77b966b970b01b7c884ea86970b .entry-header a')
   @date = @page.search('#alpha-inner > .date-header:nth-child(3)')

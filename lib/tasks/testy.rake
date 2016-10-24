@@ -14,10 +14,11 @@ namespace :testy do
                     "Past week", "Past month", "Past year", "Archives", "Sorted by date",
                     "2", "3", "4", "5", "6", "7", "8", "9", "10", "Next", "Advanced search",
                     "RSS", "Search Help", "Send feedback", "Business Solutions", "Privacy", "Terms", "About Google", 
-                    "Google Home", "Advertising Programs"]
+                    "Google Home", "Advertising Programs", "Search settings", "Even more »", "Docs", "Photos", "Finance",
+                    "Blogger", "Wallet", "Mobile", "Translate", "Calendar", "More", "News", "Google+", "here"]
     @search.each do |x|
       if @google_list.exclude?(x.text)
-        puts x.uri
+        puts x
       end
     end
     
