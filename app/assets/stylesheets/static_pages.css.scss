@@ -311,15 +311,21 @@ html, body, .container-fluid {
 /* Fishing */
 
 .static-fishing {
-    height: 50%;
     font-size: 150%;
 }
 
 .static-fishing-ad {
+    position: absolute;
+    top: 19%;
+    right: 0%;
 }
 
 .fishing-directory {
     
+}
+
+.activity-directory {
+
 }
 
 /* News */
