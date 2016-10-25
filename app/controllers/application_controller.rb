@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :weather
   helper_method :dollar
+  helper_method :time
   
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

@@ -54,7 +54,7 @@ namespace :noko do
 
     @a = Mechanize.new
     @a.user_agent_alias = 'Mac Safari 4'
-    @page = @a.get('https://news.google.com/')
+    @page = @a.get('http://news.google.com/')
     @newsf = @page.form_with(:action => "//www.google.com/search?cf=all&hl=en&pz=1&ned=us")
     @newsf.q = "east cape baja"
     @search_results = @a.submit(@newsf)

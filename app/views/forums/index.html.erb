@@ -5,7 +5,8 @@
 <% end %>
 
 <div class="col-xs-2 col-xs-push-10 forum-adsr">
-  ads right
+  <!--ads right-->
+  
 </div>
 
 <div class="col-xs-10 col-xs-pull-2">
@@ -22,11 +23,11 @@
     <%= link_to forum_path(forum) do %>
       <div class="posts-title col-xs-12 center-box">
         <b><%= forum.title %></b><br>
-        <span class="date-index"><%= forum.created_at %>
+        <span class="date-index"><%= forum.created_at.to_s(:short) %>
         <div>
         posted by:
           <% if forum.user_id.nil? %>
-            Anonymous
+            Visitor
           <% else %>
             <%= User.find(forum.user_id).username %>
           <% end %>
