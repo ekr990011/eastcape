@@ -1,4 +1,4 @@
-<% provide(:title, "Pirate's Cove | East Cape") %>
+<% provide(:title, "Pirate's Cove") %>
 <% if flash[:success] %>
     <div class="alert alert-success"><%= flash[:success] %></div>
 <% end %>
@@ -44,13 +44,13 @@
 </div>
 
 <div class="col-xs-5 forum-homepage col-xs-pull-2">
-    <h4><b>Newest Posts</b></h4>
+    <h4><b><%= link_to "Newest Posts", forums_path %></b></h4>
     <%= render 'forums/forum_homepage' %>
 </div>
 
 <div class="col-xs-5 news-homepage col-xs-pull-2">
     <div class="news-thome">
-    <h4><b>News!</b></h4>
+    <h4><b><%= link_to "News!", news_path %></b></h4>
     </div>
     <%= render 'static_pages/news_homepage' %>
 </div> 
