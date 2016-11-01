@@ -1,18 +1,20 @@
 namespace :angler do
   task scrape: :environment do
-    require 'mechanize'
+    require 'nokogiri'
+    require 'open-uri'
     
-    @a = Mechanize.new
-    @a.user_agent_alias = 'Mac Safari 4'
-    @page = @a.get('https://eastcapeangler.wordpress.com/')
-    @title = @page.search('.tag-adventure.tag-roosterfish .post-title a')
-    @date = @page.search('.tag-adventure.tag-roosterfish .post-meta a:nth-child(1)')
-    News.create do |p|
-        p.title = @title.text
-        p.url   = @title.attribute('href').text
-        p.date  = @date.text
-        p.save
-    end
+    doc = Nokogiri::XML(open("https://eastcapeangler.wordpress.com/feed/"))
+    
+     @title = doc.xpath('//item').xpath('title').first.text
+     @date = doc.xpath('//item').xpath('pubDate').first.text.slice(0..24)
+     @url = doc.xpath('//item').xpath('guid').first.text
+  
+     News.create do |x|
+       x.title = @title
+       x.date = @date
+       x.url = @url
+       x.save
+     end
     
   end
 end
