@@ -2,10 +2,14 @@ class UsersController < ApplicationController
   invisible_captcha only: [:create], honeypot: :website
   
   def new
+    @meta_tag="noindex nofollow"
+    
     @user = User.new
   end
   
   def create
+    @meta_tag="noindex"
+    
     @user = User.new(user_params)
     if 
       @user.save

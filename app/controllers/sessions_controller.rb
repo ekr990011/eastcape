@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   invisible_captcha only: [:create], honeypot: :password_confirmation
   
   def new
+    @meta_tag = "noindex nofollow"
   end
   
   def create
@@ -16,6 +17,8 @@ class SessionsController < ApplicationController
   end
   
   def destroy
+    @meta_tag= "noindex"
+    
     session[:user_id] = nil
     redirect_to root_path
   end
