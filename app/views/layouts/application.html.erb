@@ -4,6 +4,9 @@
   <title>
     <%= full_title(yield(:title)) %>
   </title>
+  <% unless @meta_description == nil %>
+  <meta content="<%= @meta_description %>" />
+  <% end %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

@@ -12,6 +12,8 @@ class StaticPagesController < ApplicationController
     
     @image_iframe = "LB.Flag1.jpg"
     
+    @meta_description = "Welcome to East Cape’s (Los Barriles) premier site.  Check out our real-time forum, fishing reports, local news and more for locals and visitors alike."
+    
     @count = @google.count
     @random_google = rand(@count)
     @random_google_entry = @google.offset(@random_google).first
