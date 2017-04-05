@@ -120,17 +120,6 @@ ActiveRecord::Schema.define(version: 20161008155551) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "real_estates", force: :cascade do |t|
-    t.string   "biz_name"
-    t.string   "tel"
-    t.string   "tel2"
-    t.string   "website"
-    t.string   "email"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "realestates", force: :cascade do |t|
     t.string   "biz_name"
     t.string   "tel"

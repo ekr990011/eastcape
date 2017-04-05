@@ -1,12 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+// font-family: 'Open Sans', sans-serif;
+// font-family: "Comic Sans MS", cursive, sans-serif;
 
 
 
 /* Main site structure */
 html, body, .container-fluid {
     height: 100%;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container-fluid {
@@ -29,7 +32,7 @@ html, body, .container-fluid {
     top: 0%;
     right: 0%;
     font-size: 130%;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #ff944d;
     text-shadow: .05em .05em .05em #803300;
     text-align: right;
@@ -42,15 +45,15 @@ html, body, .container-fluid {
 .tagline {
     margin-top: -1%;
     text-align: center;
-    font-family: "Comic Sans Ms", cursive, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #ff8080;
     text-shadow: .04em .04em #990000;
     font-size: 170%;
-    
+
 }
 
 .headert {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 350%;
     color: #ffb380;
     text-shadow: .04em .04em #cc5200;
@@ -102,7 +105,7 @@ html, body, .container-fluid {
 
 .nav > li > a {
     font-size: 125%;
-      color: #ff6600; 
+      color: #ff6600;
       text-shadow: .06em .06em #660000;
       z-index: 2;
 }
@@ -186,7 +189,7 @@ html, body, .container-fluid {
 }
 
 .forum-show-title {
-    font-size: 170%; 
+    font-size: 170%;
     margin-top: 3%;
 }
 
@@ -231,7 +234,7 @@ html, body, .container-fluid {
     height: 45%;
     // border-bottom: ridge;
     overflow: hidden;
-}    
+}
 
 .static_text {
     position: absolute;
@@ -327,7 +330,7 @@ html, body, .container-fluid {
 }
 
 .fishing-directory {
-    
+
 }
 
 .activity-directory {
