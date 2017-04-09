@@ -1,0 +1,8 @@
+ <% @forum_homepage.each do |x| %>
+   <%= link_to forum_path(x) do %>
+     <div class="forum_posts col-xs-12">
+       <div class="forum-title"><%= "#{x.title} " %></div>
+       <%= " #{x.post}" %>
+     </div>
+   <% end %>
+<% end %>
