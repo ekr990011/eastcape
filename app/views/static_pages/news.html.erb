@@ -4,34 +4,19 @@
   <%= link_to "#{@titlehb}", @linkhb.url, target: :_blank %><br>
   <%= @newsdate %><br>
   <br>
-  
+
   <b>Hotel Las Palmas de Cortez</b><br>
   <%= link_to "#{@titlevm}", @linkvm.url, target: :_blank %><br>
   <%= @datevm %>
   <br>
   <br>
-  
-  <b>Rancho Leonero</b><br>
-  <%= link_to "#{@title_rancho}", @url_rancho, target: :_blank %><br>
-  <%= @date_rancho %>
-  <br>
-  <br>
-  
+
   <b>Google News</b><br>
   <% @title_google.each do |x| %>
     <%= link_to "#{x.title}", x.url, target: :_blank %><br>
   <% end %>
   <br>
-  
-  <b>Pete</b><br>
-  <%= link_to "#{@title_pete}", @url_pete, target: :_blank %><br>
-  <%= @date_pete %>
-  <br>
-  <br>
-  
-  <b>Wunderground</b><br>
-  <%= link_to "#{@title_wunder}", @url_wunder, target: :_blank %><br>
-</div>
+
 <div class="col-xs-2">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- responsive add dark pirate -->
