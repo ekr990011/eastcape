@@ -5,8 +5,8 @@
       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W44znJwxnn8"></iframe>
     </div>
   </div>
-  This a listing of services in the East Cape area.<br> 
-    
+  This a listing of services in the East Cape area.<br>
+
 </div>
 
 
@@ -34,10 +34,10 @@
     <%= x.tel %><br>
   <% elsif x.tel2 != "" %>
     <%= x.tel2 %><br>
-  <% end %>  
-  <%= link_to  x.website, "http://#{x.website}", target: :_blank %> <%= x.email %><br>
+  <% end %>
+  <%= link_to  x.website, "#{x.website}", target: :_blank %> <%= x.email %><br>
   <%= x.description %>
-  
+
   <% if (current_user && current_user.admin?) %>
     <br>
     <%= link_to 'Edit', edit_service_path(x) %>
