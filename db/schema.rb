@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008155551) do
+ActiveRecord::Schema.define(version: 20170206123015) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "biz_name"
@@ -49,10 +48,9 @@ ActiveRecord::Schema.define(version: 20161008155551) do
     t.integer  "forum_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["forum_id"], name: "index_comments_on_forum_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
-
-  add_index "comments", ["forum_id"], name: "index_comments_on_forum_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "contacts", force: :cascade do |t|
     t.text     "text"
@@ -85,9 +83,8 @@ ActiveRecord::Schema.define(version: 20161008155551) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_forums_on_user_id"
   end
-
-  add_index "forums", ["user_id"], name: "index_forums_on_user_id"
 
   create_table "googles", force: :cascade do |t|
     t.string   "title"
@@ -173,6 +170,7 @@ ActiveRecord::Schema.define(version: 20161008155551) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "time"
   end
 
 end

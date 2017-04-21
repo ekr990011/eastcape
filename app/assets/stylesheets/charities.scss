@@ -1,0 +1,27 @@
+// Place all the styles related to the charities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
+// font-family: 'Merriweather', serif;
+
+.fourloveofbaja {
+  font-family: 'Merriweather', serif;
+}
+
+#fourloveofbaja-h1 {
+  font-size: 60px;
+  color: #99c2ff;
+}
+
+#fourlove-div1 {
+  background-color: #ffcc66;
+  border-radius: 1em;
+  margin-bottom: 2%;
+}
+
+#fourlove-div2 {
+  background-color: #adebeb;
+  border-radius: 2em;
+  margin-bottom: 3%;
+}

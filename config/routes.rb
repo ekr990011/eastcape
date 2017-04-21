@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  get 'charities/fourloveofbaja'
+
   root 'static_pages#home'
-  get 'about' =>      'static_pages#about'
-  get 'news' =>       'static_pages#news'
+
   
+  get 'charities/4loveofbaja'
+  get 'news' =>       'static_pages#news'
+  get '4loveofbaja' => 'charities/4loveofbaja'
+
   get 'signup' =>     'users#new'
   resources :users
-  
+
   resources :bars
   resources :realestates
   resources :services
@@ -13,11 +18,11 @@ Rails.application.routes.draw do
   resources :fishings
   resources :advertises
   resources :contacts
-  
+
   resources :forums do
     resources :comments
   end
-  
+
   delete 'logout' =>     'sessions#destroy'
-  resources :sessions, only: [:new, :create] 
+  resources :sessions, only: [:new, :create]
 end

@@ -1,19 +1,15 @@
 <header class="col-xs-12 header">
-  
+
   <div class="weather-widget col-xs-2">
   <%= link_to "http://www.accuweather.com/en/mx/los-barriles/236828/weather-forecast/236828#menu-country", :target => "_blank" do %>
-    
     <%= image_tag("#{weather.wicon}-s.png") %>
     <%= weather.tempf.to_i %>&deg;F<br>
     <%= weather.wtext.titlecase %>
-    
-    
-    <% end %>
-    </div>
-    
-    
+  <% end %>
+  </div>
+
   <div class="headernav">
-    <% # img / nav bar/ weather icon, here %>
+     <!-- img / nav bar/ weather icon, here -->
     <nav>
       <ul class="nav nav-tabs" id="navlist">
         <li><%= link_to "Home", root_path %></li>
@@ -32,9 +28,9 @@
     </nav>
     <div class="col-xs-12 div-tp"></div>
   </div>
-  
+
   <%= image_tag(('water3.jpg'), class: "header_image") %>
-  
+
   <div class="col-xs-6 col-xs-offset-1 headertext">
     <h1  class="headert">Pirates' Cove</h1>
     <h1 class="tagline"> East Cape</h1>
@@ -42,9 +38,9 @@
 
   <div class="col-xs-3 dollar">
     <%= link_to "http://www.x-rates.com/table/?from=MXN&amount=1", target: :_blank do %>
-    Peso Exchange Rate <br> 
+    Peso Exchange Rate <br>
     <%= dollar.dollar %> US  |
     <%= dollar.candollar %> CAN
     <% end %>
-  </div>  
+  </div>
 </header>
