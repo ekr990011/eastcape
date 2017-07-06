@@ -7,10 +7,7 @@ namespace :dollar do
     @page = @a.get('http://www.x-rates.com/table/?from=MXN&amount=1')
     @dollar = @page.search('.ratesTable:nth-child(4) tr:nth-child(1) .rtRates+ .rtRates a').text.slice(0..4)
     @candollar = @page.search('.ratesTable:nth-child(4) tr:nth-child(6) .rtRates+ .rtRates a').text.slice(0..4)
-    Dollar.first.update do |x|
-      x.dollar = @dollar
-      x.candollar = @candollar
-    end
+    Dollar.first.update(dollar: @dollar, candollar: @candollar)
     
   end
 end

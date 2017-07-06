@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '4.2.5'
 gem 'better_errors',  '2.1.1'
 gem 'bcrypt',         '3.1.11'
 gem 'nokogiri'
