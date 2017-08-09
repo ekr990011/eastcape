@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.4.0"
 
 gem 'rails'
 gem 'better_errors',  '2.1.1'
